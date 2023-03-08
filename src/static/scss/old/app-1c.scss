@@ -1,0 +1,249 @@
+@import "mixins";
+@import "custom";
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+
+//black on white
+a {
+	@include link-active;
+
+	&:hover {
+		@include link-hover;
+	}
+}
+p {
+	margin-bottom: 0;
+}
+
+.header {
+	z-index: 1;
+	position: relative;
+	margin-top: 2.89em;
+	margin-bottom: -.2%;
+
+	&__name {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		font-size: 1.428em;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: 0.01em;
+		text-align: left;
+		color: #FAFAFA;
+		&-img {
+			width: 1.75em;
+			margin-right: 1.2%;
+		}
+	}
+
+	&__title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__links {
+		display: flex;
+		align-items: center;
+		font-size: 1.428em;
+		font-weight: 500;
+		line-height: 1.2;
+		letter-spacing: 0.01em;
+		text-align: left;
+
+		.link-active {
+			margin-right: 15px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.hero{
+	margin-top: -3.9em;
+	&-app{
+		position: relative;
+		//margin-top: -3%;
+		margin-left: -6.7%;
+		margin-right: -6.7%;
+		margin-bottom: 6%;
+		img{
+
+		}
+		&__desc{
+			position: absolute;
+			top: 9.7%;
+			left: 6%;
+			@include bold-link;
+			line-height: 1.1;
+			letter-spacing: 0.01em;
+			color: #1A1A1A;
+		}
+	}
+}
+
+.company{
+
+	&__desc{
+		margin-bottom: 10.5%;
+		@include middle-text;
+	}
+}
+
+.main-screen{
+	margin-bottom: 3em;
+	&__title{
+		margin-bottom: 2.1%;
+		@include middle-text;
+		font-weight: 500;
+
+	}
+	&__desc{
+		@include middle-text;
+		margin-bottom: 3%;
+	}
+	&__img{
+		display: flex;
+		justify-content: space-around;
+		//margin-left: -2.2%;
+		//margin-right: -2.2%;
+		//img{
+		//	width: 35%;
+		//}
+	}
+	&__first{
+		margin-left: -9.8%;
+		margin-right: -9.8%;
+	}
+	&__second{
+		margin-left: -27.5%;
+		margin-right: 7.9%;
+	}
+	&__third{
+		margin-left: -9.8%;
+		margin-right: -9.8%;
+	}
+}
+
+.system{
+	margin-bottom: 0;
+
+	&__title{
+		margin-bottom: 1%;
+		@include middle-text;
+		font-weight: 500;
+	}
+	&__desc{
+		@include middle-text;
+		margin-bottom: 3.2%;
+	}
+	&__screens-left{
+		display: flex;
+		margin-bottom: 8.6%;
+		img{
+			width: 50%;
+			height: 50%;
+			margin-right: 2.7%;
+		}
+	}
+	&__screens-right{
+		display: flex;
+		margin-bottom: 8.6%;
+		img{
+			width: 50%;
+			height: 50%;
+			margin-left: 2.7%;
+		}
+	}
+	&__img{
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 9.8%;
+		//margin-top: 2.3%;
+		//margin-left: -2.2%;
+		//margin-right: -2.2%;
+		//img{
+		//	width: 35%;
+		//
+		//}
+	}
+	&__first{
+		margin-left: -9.8%;
+		margin-right: -9.8%;
+	}
+	&__second{
+		margin-left: -27.5%;
+		margin-right: 7.9%;
+	}
+	&__third{
+		margin-left: -9.8%;
+		margin-right: -9.8%;
+	}
+}
+
+.design{
+	margin-bottom: 7em;
+	&__title{
+		margin-bottom: 2.1%;
+		@include middle-text;
+		font-weight: 500;
+	}
+
+	&__desc{
+		margin-bottom: 5.3%;
+		@include middle-text;
+	}
+	&__img{
+		margin-left: -6.7%;
+		margin-right: -6.7%;
+	}
+}
+
+.icons{
+	margin-bottom: 14.3em;
+	&__title{
+		margin-bottom: 5.3%;
+		@include middle-text;
+		letter-spacing: -.015em;
+		font-weight: 500;
+	}
+
+	&__img{
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		//margin-left: -6.8%;
+		//margin-right: -6.8%;
+		img{
+			&:first-child{
+				width: 19.6em;
+			}
+			&:nth-child(2){
+				width: 15.8em;
+			}
+			&:nth-child(3){
+				width: 16.5em;
+			}
+			&:nth-child(4){
+				width: 17.1em;
+			}
+			&:last-child{
+				width: 17.7em;
+			}
+		}
+	}
+}
+
+.footer {
+	height: 100%;
+
+	.page-info {
+		padding-top: 1.7%;
+		padding-bottom: 27%;
+		border-top: .2em solid #000;
+	}
+}
+

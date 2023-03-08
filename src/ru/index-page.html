@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pages Index</title>
+	<style>
+		.disabled {
+			opacity: 0.5;
+		}
+		.done {
+			color: green;
+		}
+		.almost {
+			color: #d7f31f;
+		}
+		.upgrade {
+			color: magenta;
+		}
+	</style>
+</head>
+<body>
+
+<h2>Главная</h2>
+<ul>
+	<li><a class="almost" href="/">Главная</a></li>
+	<li><a class="done" href="poetry.html">Стихи</a></li>
+	<li><a class="done" href="app-cleverence.html">Приложение Клеверенс</a></li>
+	<li><a class="done" href="kos-day.html">Презентации KOS-Day 2020</a></li>
+</ul>
+
+<h2>1C (Public)</h2>
+<ul>
+	<li><a class="done" href="app-1c.html">1С:Мобильная касса</a></li>
+	<li ><a class="upgrade" href="video-chat-1c.html">1С Видеозвонки</a>
+		<span style="color: red">---Сделал на этой странице (ДЛЯ ПРИМЕРА) загрузку изображений в формате avif, webp.---</span>
+	</li>
+
+	<li><a class="done" href="menu-1c.html">Большое обновление меню платформы 1С</a></li>
+</ul>
+
+<h2>MESO (Public)</h2>
+<ul>
+	<li style="display: flex"><a class="done" href="admin-meso.html">Meso админка</a></li>
+	<li><a class="almost" href="app-meso.html">Meso app</a></li>
+</ul>
+
+<h2>БКС (БКС)</h2>
+<ul>
+	<li><a class="done" href="bks-land.html">Серия лендингов БКС Премьер</a></li>
+	<li><a class="done" href="bks-mob.html">Мобильная версия партнерского сайта БКС Капитал</a></li>
+	<li><a class="done" href="bks-partners.html">Партнерские сайты для компании БКС</a></li>
+	<li><a class="done" href="bks-story.html">Интерактивный рассказ</a></li>
+	<li><a class="done" href="bks-invest.html">Инвестиционный отчет для клиентов компании БКС</a></li>
+</ul>
+
+<h2>Оливье (Оливье)</h2>
+<ul>
+	<li><a class="done" href="olivier.html">Лого Оливье</a></li>
+</ul>
+<h2>Frontol (ATOL)</h2>
+<ul>
+	<li><a class="done" href="frontol-illustrations.html">Иллюстрации Frontol</a></li>
+	<li><a class="almost" href="frontol-trade.html">UPD: Frontol Trade</a></li>
+</ul>
+
+<div style="width: 250px; border: 1px solid #000; padding: 10px; margin: 10px 0; position: absolute; top: 20px; right: 50px">
+	<p><span class="done">Зелёная ссылка</span> — готово</p>
+	<p><span class="almost">Салатовая ссылка</span> — почти готово</p>
+	<p><span class="upgrade">Мажента</span> — последнее обновление</p>
+</div>
+
+<footer>
+	Build #16
+	&middot;
+	<time datetime="2021-05-31T21:00:00+03:00">2021-04-07T15:00:00+03:00</time>
+</footer>
+
+
+<script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
+<script
+	src="https://cdn.polyfill.io/v3/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign,Object.is"></script>
+<script>
+	window.addEventListener('load', function () {
+		document.querySelectorAll('time').forEach(function (element) {
+			element.innerText = luxon.DateTime.fromISO(element.getAttribute('datetime')).toRelative();
+		});
+	});
+</script>
+
+</body>
+</html>

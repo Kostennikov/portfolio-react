@@ -1,0 +1,155 @@
+@mixin link-active {
+	text-decoration: none;
+	list-style: none;
+	cursor: pointer;
+	color: #1A1A1A;
+	border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+	transition: color .2s;
+	//box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+@mixin link-hover {
+	text-decoration: none;
+	list-style: none;
+	cursor: pointer;
+	border-bottom: 1px solid #d8d8d8;
+	color: #130793;
+	transition: ease .2s;
+	//box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+//////////////////////////////////////////////////////////
+@mixin link-light {
+	text-decoration: none;
+	list-style: none;
+	cursor: pointer;
+	color: #fff;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	transition: ease .2s;
+}
+@mixin link-dark {
+	text-decoration: none;
+	list-style: none;
+	cursor: pointer;
+	color: #1A1A1A;
+	border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+	transition: ease .2s;
+}
+@mixin light-hover {
+	text-decoration: none;
+	list-style: none;
+	cursor: pointer;
+	border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+	transition: ease .2s;
+	color: #130793;
+	//color: #323232;
+	//box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+@mixin dark-hover {
+	text-decoration: none;
+	list-style: none;
+	cursor: pointer;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	transition: ease .2s;
+	color: #323232;
+	//box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin bold-link {
+	font-family: $Formular;
+	font-size: 4.28em;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 1.18;
+	//line-height: 3.7rem;
+	//line-height: 65px;
+	letter-spacing: 0.01em;
+	color: #1A1A1A;
+	//@media (min-width: 1260px) and (max-width: 1919px) {
+	//	line-height: 2.8rem;
+	//}
+	//@media (min-width: 768px) and (max-width: 1259px) {
+	//	line-height: 1.7rem;
+	//}
+	//@media screen and (max-width: 767px) {
+	//	line-height: .85rem;
+	//}
+}
+
+@mixin normal-link {
+	font-family: $Formular;
+	font-size: 2.85em;
+	font-style: normal;
+	font-weight: 500;
+	//line-height: 45px;
+	line-height: 1.2;
+	letter-spacing: 0.01em;
+
+	color: #1A1A1A;
+	//@media (min-width: 1260px) and (max-width: 1919px) {
+	//	line-height: 1.9rem;
+	//}
+	//@media (min-width: 768px) and (max-width: 1259px) {
+	//	line-height: 1.15rem;
+	//}
+	//@media screen and (max-width: 767px) {
+	//	line-height: .6rem;
+	//}
+}
+
+@mixin middle-text{
+	font-family: $Formular;
+	font-style: normal;
+	font-size: 1.785em;
+	font-weight: 400;
+	line-height: 1.43;
+	letter-spacing: 0;
+	color: #1A1A1A;
+}
+
+@mixin light-text {
+	font-family: $Formular;
+	font-size: 1.42em;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.3;
+	letter-spacing: 0.01em;
+	color: #1A1A1A;
+
+	//@media (min-width: 1260px) and (max-width: 1919px) {
+	//	line-height: 1rem;
+	//}
+	//@media (min-width: 768px) and (max-width: 1259px) {
+	//	//font-size: 1.5em;
+	//	line-height: .6rem;
+	//}
+	//@media screen and (max-width: 767px) {
+	//	//font-size: 1em;
+	//	line-height: .35rem;
+	//}
+}
+
+
+$path: '../fonts/';
+
+$Formular: "Formular",
+Helvetica,
+Arial,
+sans-serif;
+
+@mixin fontFaceFormular($name, $src, $weight, $style) {
+	$source: $path+$src;
+
+	@font-face {
+		font-family: $name;
+		src: url($source + '.woff2') format('woff2'),
+		url($source + '.woff') format('woff'),
+		url($source + '.ttf') format('truetype');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+
+@include fontFaceFormular('Formular', 'Formular-Light', 300, normal);
+@include fontFaceFormular('Formular', 'Formular', 400, normal);
+@include fontFaceFormular('Formular', 'Formular-Italic', 400, italic);
+@include fontFaceFormular('Formular', 'Formular-Medium', 500, normal);
+@include fontFaceFormular('Formular', 'Formular-Bold', 700, normal);

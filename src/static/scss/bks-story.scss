@@ -1,0 +1,287 @@
+@import "mixins";
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
+
+p {
+	margin-bottom: 0;
+}
+a {
+	@include link-active;
+
+	&:hover {
+		@include link-hover;
+		color: #1A1A1A;
+	}
+}
+
+.header {
+	margin-top: 7.89em;
+	margin-bottom: 0;
+	@media (min-width: 768px) {
+		margin-top: 2.89em;
+	}
+	&__links {
+		width: 97.2vw;
+		padding-right: 1em;
+		//margin-right: 2.8vw;
+		justify-content: normal;
+
+		&:after {
+			content: '';
+			width: 1em;
+			height: 1em;
+			flex-shrink: 0;
+		}
+		@media (min-width: 768px) {
+			justify-content: flex-start;
+			padding-right: 0;
+			&:after {
+				content: none;
+
+			}
+		}
+
+	}
+	//&__link {
+	//	&:last-child {
+	//
+	//	}
+	//
+	//}
+}
+
+.hero {
+	margin-top: -28.2em;
+
+	@media (min-width: 768px) {
+		margin-top: -3.97em;
+	}
+
+	&-app {
+		position: relative;
+		//margin-top: -3%;
+		margin-left: -3.4%;
+		margin-right: -3.4%;
+		margin-bottom: 6%;
+		@media (min-width: 768px) {
+			margin-left: -6.7%;
+			margin-right: -6.7%;
+		}
+		img {
+
+		}
+
+		&__desc {
+			display: none;
+			position: absolute;
+			top: 9.7%;
+			left: 6%;
+			@include bold-link;
+			line-height: 1.1;
+			letter-spacing: 0.01em;
+			color: #1A1A1A;
+			@media (min-width: 768px) {
+				display: block;
+			}
+		}
+	}
+}
+
+.row-0 {
+	&__title {
+		margin-bottom: 0.6em;
+		@include bold-link;
+		line-height: 1.1;
+		font-size: 13.2em;
+		letter-spacing: 0;
+		@media (min-width: 768px) {
+			display: none;
+		}
+	}
+	&__desc {
+		margin-bottom: 2.83em;
+
+
+		@include mob-regular;
+
+		@media (min-width: 768px) {
+			@include middle-text;
+			margin-bottom: 10.5%;
+		}
+
+		p {
+			margin-bottom: .8em;
+		}
+	}
+}
+
+.row-1 {
+	margin-bottom: 10.8em;
+	overflow: hidden;
+	@media (min-width: 768px) {
+		margin-bottom: 2.8em;
+	}
+
+	&__title {
+		margin-bottom: 2.1%;
+		@include mob-regular;
+		font-weight: 700;
+		@media (min-width: 768px) {
+			@include middle-text;
+			font-weight: 700;
+		}
+	}
+
+	&__desc {
+		@include mob-regular;
+		margin-bottom: 3%;
+		@media (min-width: 768px) {
+			@include middle-text;
+		}
+
+
+		p {
+			margin-bottom: .8em;
+		}
+	}
+
+	&__img {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	&__first {
+		margin-left: -10%;
+		margin-right: -2.8%;
+		@media (min-width: 768px) {
+			margin-left: -9.6%;
+			margin-right: -8.8%;
+		}
+
+	}
+
+	&__second {
+		margin-left: -10%;
+		margin-right: -2.8%;
+		@media (min-width: 768px) {
+			margin-left: -26.6%;
+			margin-right: 8.2%;
+		}
+	}
+
+	&__third {
+		margin-left: -10%;
+		margin-right: -2.8%;
+		@media (min-width: 768px) {
+			margin-left: -9.7%;
+			margin-right: -8.7%;
+		}
+	}
+}
+
+.row-2 {
+	margin-bottom: 20em;
+	overflow: hidden;
+	@media (min-width: 768px) {
+		margin-bottom: 11em;
+	}
+
+	&__title {
+		margin-bottom: 2.1%;
+		@include mob-regular;
+		font-weight: 700;
+		@media (min-width: 768px) {
+			@include middle-text;
+			font-weight: 700;
+		}
+	}
+
+	&__desc {
+		@include mob-regular;
+		margin-bottom: 3%;
+		@media (min-width: 768px) {
+			@include middle-text;
+		}
+
+
+		p {
+			margin-bottom: .8em;
+		}
+	}
+
+	&__img {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		@media (min-width: 768px) {
+			display: block;
+			text-align: center;
+		}
+
+		picture {
+			@media (min-width: 768px) {
+				margin-bottom: -2.3em;
+			}
+		}
+
+		&-text{
+			display: none;
+			margin-top: -2em;
+			@include light-text;
+			text-align: center;
+			@media (min-width: 768px) {
+				display: inline;
+			}
+		}
+	}
+
+	&__first {
+		margin-left: -10%;
+		margin-right: -2.8%;
+		@media (min-width: 768px) {
+			margin-left: -9.6%;
+			margin-right: -8.8%;
+		}
+	}
+
+	&__second {
+		margin-left: -10%;
+		margin-right: -2.8%;
+		@media (min-width: 768px) {
+			margin-left: -26.6%;
+			margin-right: 8.2%;
+		}
+	}
+
+	&__third {
+		margin-left: -10%;
+		margin-right: -2.8%;
+		@media (min-width: 768px) {
+			margin-left: -9.7%;
+			margin-right: -8.7%;
+		}
+	}
+}
+
+.footer {
+	height: 100%;
+
+	.page-info {
+		//padding-bottom: 37%;
+	}
+	.mobile-link {
+		margin-bottom: 109em;
+
+		&__img {
+			margin-bottom: 3%;
+			margin-left: -6%;
+			margin-right: -6%;
+		}
+
+		&__link {
+			margin-top: 0;
+			margin-left: 0;
+		}
+	}
+}
+

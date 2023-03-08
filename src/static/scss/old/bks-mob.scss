@@ -1,0 +1,174 @@
+@import "mixins";
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
+p {
+	margin-bottom: 0;
+}
+
+.ava__link {
+	@include link-light;
+	&:hover {
+		@include light-hover;
+		color: #fff;
+	}
+}
+
+.header {
+	margin-top: 2.89em;
+	margin-bottom: 0;
+}
+
+.hero {
+	margin-top: -3.97em;
+
+	&-app {
+		position: relative;
+		//margin-top: -3%;
+		margin-left: -6.7%;
+		margin-right: -6.7%;
+		margin-bottom: 6%;
+
+		img {
+
+		}
+
+		&__desc {
+			position: absolute;
+			top: 9.7%;
+			left: 6%;
+			@include bold-link;
+			line-height: 1.1;
+			letter-spacing: 0.01em;
+			color: #fff;
+		}
+	}
+}
+
+.row-0{
+	&__desc{
+		margin-bottom: 10.5%;
+		@include middle-text;
+	}
+}
+
+.row-1{
+	margin-bottom: 6em;
+	&__title{
+		margin-bottom: 2.1%;
+		@include middle-text;
+		font-weight: 700;
+
+	}
+	&__desc{
+		@include middle-text;
+		margin-bottom: 3%;
+		p{
+			margin-bottom: .8em;
+		}
+	}
+	&__img{
+		display: flex;
+		justify-content: space-around;
+	}
+	&__first{
+		margin-left: -9.6%;
+		margin-right: -8.8%;
+	}
+	&__second{
+		margin-left: -25.5%;
+		margin-right: 11.3%;
+	}
+	&__third{
+		margin-left: -10.7%;
+		margin-right: 7.7%;
+	}
+}
+
+.row-2{
+	margin-bottom: 3em;
+	&__title{
+		margin-bottom: 2.1%;
+		@include middle-text;
+		font-weight: 700;
+
+	}
+	&__desc{
+		@include middle-text;
+		margin-bottom: 3%;
+		p{
+			margin-bottom: .8em;
+		}
+	}
+	&__img{
+		display: flex;
+		justify-content: space-around;
+	}
+	&__first{
+		margin-left: -9.6%;
+		margin-right: -8.8%;
+	}
+	&__second{
+		margin-left: -25.5%;
+		margin-right: 11.3%;
+	}
+	&__third{
+		margin-left: -10.7%;
+		margin-right: 7.7%;
+	}
+}
+
+.row-3 {
+	overflow: hidden;
+	margin-bottom: 5.6em;
+
+	&__title {
+		margin-bottom: 2.1%;
+		@include middle-text;
+		font-weight: 700;
+	}
+
+	&__desc {
+		margin-bottom: 5.2%;
+		@include middle-text;
+	}
+
+	&__img {
+		position: relative;
+		margin-left: -6.7%;
+		margin-right: -6.7%;
+		margin-bottom: 1.2%;
+	}
+}
+
+.row-4 {
+	overflow: hidden;
+	margin-bottom: 13em;
+
+	&__title {
+		margin-bottom: 2.1%;
+		@include middle-text;
+		font-weight: 700;
+	}
+
+	&__desc {
+		margin-bottom: 5.2%;
+		@include middle-text;
+	}
+
+	&__img {
+		position: relative;
+		margin-left: -5.45%;
+		margin-right: -5.45%;
+		margin-bottom: 1.2%;
+	}
+}
+
+.footer {
+	height: 100%;
+
+	.page-info {
+		padding-top: 1.7%;
+		padding-bottom: 27%;
+		border-top: .2em solid #000;
+	}
+}

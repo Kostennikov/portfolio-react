@@ -1,0 +1,110 @@
+@import "mixins";
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
+
+
+
+.logo{
+	&__img{
+		margin-top: 3.8em;
+		margin-left: -8%;
+		margin-right: -8%;
+	}
+}
+
+.poems{
+	margin-top: -8em;
+	&__items{
+
+	}
+	&__item{
+		margin-bottom: 7.7em;
+		&-title{
+			position: absolute;
+			top: -.1em;
+			right: 24.5em;
+			font-family: $Formular;
+			font-size: 1.06em;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 1.2;
+			letter-spacing: 0.01em;
+			color: #1A1A1A;
+		}
+		&-text{
+			position: relative;
+			font-family: $Formular;
+			font-size: 2em;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 1.36;
+			letter-spacing: 0.01em;
+			color: #1A1A1A;
+			&_middle{
+				margin-left: 3.6em;
+				width: 120%;
+			}
+			&_right{
+				margin-left: 7.2em;
+				width: 120%;
+			}
+			&_italic{
+				font-style: italic;
+			}
+			p{
+				margin-bottom: .7em;
+			}
+
+		}
+	}
+}
+
+.footer {
+	height: 100%;
+
+	.page-info {
+		//исправить позднее
+		//min-height: 687px;
+		padding-bottom: 24%;
+		border-top: .18em solid #000;
+
+		&__desc {
+			padding: 3% 0;
+			margin-left: -1.6%;
+			margin-right: -1.6%;
+			width: 110%;
+			@include normal-link;
+			//line-height: 2.9rem;
+
+			p:first-child {
+				margin-bottom: 2.5%;
+			}
+		}
+
+	}
+
+	&__blocks {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 1%;
+		margin-bottom: 1.7%;
+		border-top: .18em solid #000;
+	}
+
+	&__year {
+		@include light-text;
+	}
+
+	&__links {
+		@include light-text;
+
+		.link-active {
+			margin-right: .8em;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

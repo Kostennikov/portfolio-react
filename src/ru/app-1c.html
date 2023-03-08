@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>1С:Мобильная касса</title>
+	<link rel="stylesheet" href="scss/layout.scss">
+	<link rel="stylesheet" href="scss/app-1c.scss">
+	<link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="js/emerge.js"></script>
+</head>
+
+<body class="page">
+
+<header class="header emerge" data-effect="relax" data-duration="300" data-continue="true">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-xl-12">
+				<div class="header__title emerge" data-effect="fade" data-duration="200">
+					<div class="header__name">
+						<img class="header__name-img" srcset="img/ava@2x.png 2x" src="img/ava.png" alt="">
+						<a class="ava__link" href="/">Ярослав Туголуковский</a>
+					</div>
+					<div class="header__links">
+						<a class="header__link" href="video-chat-1c.html">Видеозвонки</a>
+						<a class="header__link" href="menu-1c.html">Меню</a>
+						<a class="header__link active" href="app-1c.html">Мобильная&nbsp;касса</a>
+						<a class="header__link" href="1c-prosto.html">Сайт&nbsp;1С&nbsp;Просто</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<div class="hero emerge" data-effect="slide" data-duration="250" data-down="10%" data-continue="true">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<div class="hero-app">
+					<picture>
+						<source srcset="img/hero/1c-mob-hero@2x.webp 2x" src="img/hero/1c-mob-hero.webp"
+						        type="image/webp" media="(min-width: 768px)"/>
+						<source srcset="img/hero/hero-mob-kassa-mob@2x.webp 2x"
+						        src="img/hero/hero-mob-kassa-mob.webp"
+						        type="image/webp" media="(max-width: 767px)"/>
+
+						<source srcset="img/hero/hero-mob-kassa-mob@2x.png 2x"
+						        src="img/hero/hero-mob-kassa-mob.png" media="(max-width: 767px)"/>
+						<img srcset="img/hero/1c-mob-hero@2x.png 2x" src="img/hero/1c-mob-hero.png"
+						     alt="">
+					</picture>
+					<div class="hero-app__desc">
+						<h5>1С:Мобильная<br>касса</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="company emerge" data-effect="slide" data-duration="300" data-down="10%" data-continue="true">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 offset-sm-0 col-md-7 col-lg-7 col-xl-7 offset-md-1">
+				<div class="company__desc">
+					<p>1С:Мобильная касса&nbsp;&mdash; приложение на андроид
+						для кассиров, курьеров и менеджеров. С его
+						помощью можно начать автоматизировать
+						небольшой магазин с розничной продажей и доставкой.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="main-screen">
+	<div class="container">
+		<div class="row emerge" data-effect="slide" data-duration="300" data-down="10%" data-continue="true">
+			<div class="col-sm-12 offset-sm-0 col-md-7 col-lg-7 col-xl-7 offset-md-1">
+				<div class="main-screen__title">
+					<h5>Главное &mdash; без обучения</h5>
+				</div>
+				<div class="main-screen__desc">
+					<p>На главном экране наглядно представлены возможности
+						программы, а по всем
+						процессам пользователя ведут за ручку.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row swiper-row">
+			<div class="swiper-wrapper">
+				<div class="col-12 offset-sm-0 col-md-3 offset-md-1 swiper-slide">
+					<div class="main-screen__img main-screen__first emerge" data-effect="slide"
+					     data-duration="300" data-down="10%" data-continue="true">
+						<picture>
+							<source srcset="img/1c-nolearn1@2x.webp 2x" src="img/1c-nolearn1.webp"
+							        type="image/webp"/>
+							<img srcset="img/1c-nolearn1@2x.png 2x" src="img/1c-nolearn1.png"
+							     alt="">
+						</picture>
+					</div>
+				</div>
+				<div class="col-12 offset-sm-0 col-md-3 offset-md-1 swiper-slide">
+					<div class="main-screen__img main-screen__second emerge" data-effect="slide"
+					     data-duration="300" data-down="10%" data-continue="true">
+						<picture>
+							<source srcset="img/1c-nolearn2@2x.webp 2x" src="img/1c-nolearn2.webp"
+							        type="image/webp"/>
+							<img srcset="img/1c-nolearn2@2x.png 2x" src="img/1c-nolearn2.png"
+							     alt="">
+						</picture>
+					</div>
+				</div>
+				<div class="col-12 col-md-3 swiper-slide">
+					<div class="main-screen__img main-screen__third emerge" data-effect="slide"
+					     data-duration="300" data-down="10%" data-continue="true">
+						<picture>
+							<source srcset="img/1c-nolearn3@2x.webp 2x" src="img/1c-nolearn3.webp"
+							        type="image/webp"/>
+							<img srcset="img/1c-nolearn3@2x.png 2x" src="img/1c-nolearn3.png"
+							     alt="">
+						</picture>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+</div>
+
+<div class="system emerge" data-effect="slide" data-duration="300" data-down="10%">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 offset-sm-0 col-md-7 col-lg-7 col-xl-7 offset-md-1">
+				<div class="system__title">
+					<h5>Продажа</h5>
+				</div>
+			</div>
+		</div>
+
+		<div class="row swiper-row-2 emerge" data-effect="slide" data-duration="300" data-down="10%">
+			<div class="swiper-wrapper">
+				<div class="col offset-0 col-md-3 offset-md-1 swiper-slide">
+					<div class="system__img system__first">
+						<picture>
+							<source srcset="img/1c-sale1@2x.webp 2x" src="img/1c-sale1.webp"
+							        type="image/webp"/>
+							<img srcset="img/1c-sale1@2x.png 2x" src="img/1c-sale1.png"
+							     alt="">
+						</picture>
+					</div>
+				</div>
+				<div class="col offset-0 col-md-3 offset-md-1 swiper-slide">
+					<div class="system__img system__second">
+						<picture>
+							<source srcset="img/1c-sale2@2x.webp 2x" src="img/1c-sale2.webp"
+							        type="image/webp"/>
+							<img srcset="img/1c-sale2@2x.png 2x" src="img/1c-sale2.png"
+							     alt="">
+						</picture>
+					</div>
+				</div>
+				<div class="col col-md-3 swiper-slide">
+					<div class="system__img system__third">
+						<picture>
+							<source srcset="img/1c-sale3@2x.webp 2x" src="img/1c-sale3.webp"
+							        type="image/webp"/>
+							<img srcset="img/1c-sale3@2x.png 2x" src="img/1c-sale3.png"
+							     alt="">
+						</picture>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12 offset-sm-0 col-md-7 col-lg-7 col-xl-7 offset-md-1">
+				<div class="system__desc emerge" data-effect="slide" data-duration="300"
+				     data-down="10%" data-continue="true">
+					<p>Для разных типов товаров предусмотрены разные экраны. Например,
+						чтобы продать
+						сигареты
+						или алкоголь, нужно просканировать марки, которые
+						выглядят по-разному. Мы
+						подсказываем, как именно:</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row swiper-row-3 emerge" data-effect="slide" data-duration="300" data-down="10%">
+			<div class="swiper-wrapper">
+				<div class="col offset-0 col-md-3 offset-md-1 swiper-slide">
+					<div class="system__img system__first">
+						<picture>
+							<source srcset="img/1c-scan1@2x.webp 2x" src="img/1c-scan1.webp"
+							        type="image/webp"/>
+							<img srcset="img/1c-scan1@2x.png 2x" src="img/1c-scan1.png"
+							     alt="">
+						</picture>
+					</div>
+				</div>
+				<div class="col offset-0 col-md-3 offset-md-1 swiper-slide">
+					<div class="system__img system__second">
+						<picture>
+							<source srcset="img/1c-scan2@2x.webp 2x" src="img/1c-scan2.webp"
+							        type="image/webp"/>
+							<img srcset="img/1c-scan2@2x.png 2x" src="img/1c-scan2.png"
+							     alt="">
+						</picture>
+					</div>
+				</div>
+				<div class="col col-md-3 swiper-slide">
+					<div class="system__img system__third">
+						<picture>
+							<source srcset="img/1c-scan3@2x.webp 2x" src="img/1c-scan3.webp"
+							        type="image/webp"/>
+							<img srcset="img/1c-scan3@2x.png 2x" src="img/1c-scan3.png"
+							     alt="">
+						</picture>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+</div>
+
+<div class="design emerge" data-effect="slide" data-duration="300" data-down="10%">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 offset-sm-0 col-md-7 col-lg-7 col-xl-7 offset-md-1">
+				<div class="design__title">
+					<h5>Работа с заказами</h5>
+				</div>
+				<div class="design__desc">
+					<p>Приложение позволяет создавать заказы вручную
+						или загружать их из программы
+						&laquo;1С:Касса&raquo;, принимать по ним оплату, предоплату и постоплату.
+						А работа
+						с товарами из заказа выглядит так же, как обычная продажа,
+						что
+						существенно упрощает разработку и привыкание к интерфейсу.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="design__img"
+				     data-continue="true">
+					<picture>
+						<source srcset="img/1c-orders-mob@2x.webp 2x" src="img/1c-orders-mob.webp"
+						        type="image/webp" media="(max-width: 767px)"/>
+						<source srcset="img/1c-orders-mob@2x.webp 2x"
+						        src="img/1c-orders-mob.webp" type="image/webp"
+						        media="(max-width: 767px)"/>
+
+						<source srcset="img/1c-orders@2x.webp 2x" src="img/1c-orders.webp" type="image/webp"
+						        media="(min-width: 768px)"/>
+						<img srcset="img/1c-orders@2x.png 2x" src="img/1c-orders.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="signature signature__icons emerge" data-effect="slide" data-duration="300" data-down="10%"
+     data-continue="true">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 offset-0 col-md-7 offset-md-1 br-desk scroll no-scroll">
+				<div class="sign">
+					<div class="sign-text emerge" data-effect="slide" data-duration="800" data-right="25%"
+					     data-continue="true">
+						<p>Иконки на главный экран по&nbsp;разным случаям </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="icons">
+	<div class="container">
+		<div class="row emerge" data-effect="slide" data-duration="300" data-down="10%" data-continue="true">
+			<div class="col-sm-12 offset-sm-0 col-md-7 col-lg-7 col-xl-7 offset-md-1 icons-row">
+				<div class="icons__title br-mob">
+					<h5>Иконки на главный экран по разным случаям</h5>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="icons__img emerge" data-effect="slide" data-duration="300" data-down="10%"
+				     data-continue="true">
+					<img src="img/1c-icon1.svg" alt="">
+					<img src="img/1c-icon2.svg" alt="">
+					<img src="img/1c-icon3.svg" alt="">
+					<img src="img/1c-icon4.svg" alt="">
+					<img src="img/1c-icon5.svg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer emerge" data-effect="slide" data-duration="300" data-down="10%" data-continue="true">
+	<div class="container">
+		<div class="footer__container">
+			<div class="row">
+				<div class="col-12">
+					<div class="page-info">
+						<div class="page-info__made">
+							<img src="img/checked.svg" alt="">
+							<p>Сделано&nbsp;в 2018&nbsp;году<br class="br-mob"> за 3 недели</p>
+						</div>
+
+						<div class="page-info__persons">
+
+						</div>
+
+						<div class="page-info__feedback">
+							<div class="page-info__feedback-desc">
+								<p>См.&nbsp;дальше:</p>
+								<a class="page-info__feedback-link" href="admin-meso.html">Meso </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div
+					class="col-sm-12 offset-sm-0 col-md-4 offset-md-1 col-lg-4 offset-lg-1 col-xl-4 offset-xl-1">
+					<div class="mobile-link emerge" data-effect="slide" data-duration="300" data-up="20px"
+					     data-left="25%" data-continue="true">
+						<div class="mobile-link__img">
+							<a class="img-link" href="admin-meso.html">
+								<picture>
+									<source srcset="img/gamepad@2x.webp 2x" src="img/gamepad.webp"
+									        type="image/webp"/>
+									<img srcset="img/gamepad@2x.png 2x" src="img/gamepad.png"
+									     loading="lazy"
+									     alt="">
+								</picture>
+							</a>
+						</div>
+						<div class="mobile-link__link">
+							<a class="link-active" href="admin-meso.html"><span>Далее:</span><br> Админка <br>
+								управления <br>
+								магазинами</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="footer__blocks">
+					<div class="footer__year">
+						<p>&#169; 2013 <span class="footer__dash">———</span>
+							<span class="footer__dash-mob">—————————————————————</span>
+							<span class="current-year">&nbsp;</span>
+						</p>
+					</div>
+
+					<div class="footer__links">
+						<a class="link-active"
+						   href="mailto:tugolukovskiy@gmail.com">tugolukovskiy@gmail.com</a>
+						<a class="link-active" href="https://t.me/tugolukovskiy" target="_blank">телеграм</a>
+						<a class="link-active link-margin" href="https://www.instagram.com/tugolukovskiy/"
+						   target="_blank">инста<span class="link-active__inst">грам</span></a>
+						<a class="link-active link-deactive link-lang br-mob-inline"
+						   href="javascript:void(0)">ру</a>
+						<img class="lang-arrow br-mob-inline" src="img/lang-arrow.svg" alt="">
+						<a class="link-active br-mob-inline" href="./en/app-1c-en.html">en</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<script>
+	const windowWidth = document.querySelector('body').offsetWidth;
+	const headerLinks = document.querySelector('.header__links');
+	headerLinks.scrollLeft = windowWidth * 100;
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

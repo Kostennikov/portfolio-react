@@ -1,0 +1,861 @@
+@import "~bootstrap/scss/bootstrap";
+@import "mixins";
+@import "custom";
+@import "variables";
+// .emerge { opacity: 1; }
+
+p {	
+	margin-bottom: 0;
+}
+.container {
+	@media screen and (max-width: 1919px) {
+		margin-left: 6.2%;
+	}
+}
+
+.header {
+	margin-top: 3.2%;
+	color: #1A1A1A;
+	margin-bottom: 5.7em;
+	&__blocks {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: .9em;
+	}
+
+	&__title {
+		display: flex;
+		flex-direction: column;
+
+		&-name {
+			position: relative;
+			@include bold-link;
+			&_img{
+				width: 12.6em;
+			}
+		}
+
+		&-ava {
+			position: absolute;
+			top: -2%;
+			left: -10%;
+			//top: -.23em;
+			//left: -1.23em;
+
+			&_img {
+				width: .83em;
+				//@media (min-width: 1260px) and (max-width: 1919px) {
+				//	width: 75%;
+				//}
+				//@media (min-width: 768px) and (max-width: 1259px) {
+				//	width: 40%;
+				//}
+				//@media screen and (max-width: 767px) {
+				//	width: 20%;
+				//}
+			}
+		}
+
+	}
+
+	&__links {
+		padding-top: 2.2%;
+		@include light-text;
+		//font-weight: 400;
+		//font-size: 1.3125em;
+
+		.link-active {
+			margin-right: .8em;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&__desc {
+		font-family: $Formular;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 2.2em;
+		line-height: 2.2rem;
+		letter-spacing: 0.01em;
+		@media (min-width: 1260px) and (max-width: 1919px) {
+			line-height: 1.5rem;
+		}
+		@media (min-width: 768px) and (max-width: 1259px) {
+			line-height: 1rem;
+		}
+		@media screen and (max-width: 767px) {
+			line-height: .1rem;
+		}
+	}
+}
+
+.row-1 {
+	margin-bottom: 8.5em;
+
+	.video {
+		position: relative;
+		z-index: 50;
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-left: -3.8%;
+			margin-right: -7.3%;
+			//@media (min-width: 1260px) and (max-width: 1919px) {
+			//	margin-left: -25px;
+			//}
+			//@media (min-width: 768px) and (max-width: 1259px) {
+			//	margin-left: -17px;
+			//}
+		}
+
+		&__link {
+			margin-top: -3.3%;
+			@include bold-link;
+		}
+	}
+
+	.travel {
+		position: relative;
+		z-index: 50;
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-left: -6.8%;
+			margin-right: 6.8%;
+			margin-top: 1.3%;
+		}
+
+		&__link {
+			margin-top: -4.5%;
+			margin-left: -14%;
+			@include bold-link;
+			text-align: center;
+		}
+	}
+}
+
+.row-2 {
+	margin-bottom: 8.5em;
+	//overflow-x: hidden;
+	.respect {
+		&__img {
+			margin-left: -4.7%;
+			margin-right: -7%;
+		}
+
+		&__desc {
+			margin-top: -4.1%;
+			@include light-text;
+			text-align: center;
+
+		}
+	}
+
+	.meso-admin {
+		z-index: 49;
+		position: relative;
+		margin-top: -110.3%;
+		margin-left: -16.5%;
+		margin-right: -22.68%;
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			//margin-right: -21%;
+
+			&:before {
+				content: '';
+				display: block;
+				height: 7%;
+				right: 0;
+				position: absolute;
+				top: 0;
+				width: 5%;
+				background: linear-gradient(90deg, rgba(249, 249, 249, 0) 0%, rgba(249, 249, 249, 1) 100%);
+			}
+		}
+
+		&__link {
+			z-index: 50;
+			margin-top: -33.4%;
+			margin-left: 11.7%;
+			@include normal-link;
+			line-height: 1.165;
+			letter-spacing: 0.03em;
+		}
+	}
+}
+
+.row-3 {
+	.kissing {
+		z-index: 48;
+		position: relative;
+
+		&__img {
+			margin-left: -8.1%;
+			margin-right: -8.7%;
+		}
+
+		&__desc {
+			z-index: 1;
+			margin-top: -7.2%;
+			@include light-text;
+			text-align: center;
+
+		}
+	}
+
+	.menu {
+		z-index: 1;
+		position: relative;
+		margin-top: -1%;
+		margin-left: -8.2%;
+		margin-right: -0.2%;
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-right: -7.4%;
+		}
+
+		&__link {
+			margin-left: 7.8%;
+			margin-top: -8.9%;
+			@include bold-link;
+			text-align: left;
+
+		}
+	}
+}
+
+.row-4 {
+	margin-top: -18em;
+	margin-bottom: 7.5em;
+
+	.meso-app {
+		z-index: 47;
+		position: relative;
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-left: -1.6%;
+			margin-right: -1.6%;
+		}
+
+		&__link {
+			margin-top: 2%;
+			@include normal-link;
+			//line-height: 2.9rem;
+			text-align: left;
+			@media screen and (max-width: 767px) {
+				width: 120%;
+			}
+		}
+	}
+}
+
+.row-5 {
+	z-index: 46;
+	position: relative;
+	margin-bottom: 7.7em;
+
+	.photoshop {
+		&__img {
+			position: relative;
+			margin-left: -5%;
+			margin-right: -7.7%;
+
+			&-eyes {
+				position: absolute;
+				top: 49.7%;
+				left: -4.1%;
+				width: 5%;
+				transform: rotateY(180deg);
+			}
+
+			&:before {
+				content: '';
+				z-index: 2;
+				position: absolute;
+
+				background-size: 20%;
+				top: 53.6%;
+				left: 2%;
+				width: 100%;
+				height: 100%;
+				background-repeat: no-repeat;
+				background-image: url(../../../public/images/line.svg);
+			}
+		}
+
+		&__desc {
+			z-index: 2;
+			position: relative;
+
+			padding-top: 3.5%;
+			border-top: 1px solid #000;
+			@include light-text;
+			text-align: center;
+		}
+	}
+
+	.present {
+		position: relative;
+		margin-top: -20.5%;
+
+		&:before {
+			content: '';
+			z-index: 2;
+			position: absolute;
+			bottom: 0.5%;
+			right: 0;
+			width: 9.4em;
+			//width: 132px;
+			height: 30px;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-image: url(../../../public/images/kaspersky-logo.svg);
+
+		}
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-right: 2.1%;
+		}
+
+		&__link {
+			margin-top: -8.8%;
+			font-size: 3.6em;
+			font-weight: 700;
+			line-height: 1.2;
+			letter-spacing: 0.01em;
+			text-align: left;
+			color: #1A1A1A;
+			//@media (min-width: 1260px) and (max-width: 1919px) {
+			//	line-height: 2.5rem;
+			//}
+			//@media (min-width: 768px) and (max-width: 1259px) {
+			//	line-height: 1.5rem;
+			//}
+			//@media screen and (max-width: 767px) {
+			//	line-height: 0.7rem;
+			//}
+		}
+	}
+}
+
+.row-6 {
+	z-index: 45;
+	position: relative;
+	margin-bottom: 10.5em;
+	overflow: hidden;
+
+	.neck {
+		&__img {
+			margin-left: -7.7%;
+			margin-right: -7.7%;
+		}
+
+		&__desc {
+			margin-top: -5.4%;
+			@include light-text;
+
+			text-align: center;
+
+		}
+	}
+}
+
+.row-7 {
+	margin-bottom: 9.1em;
+	.bks-land {
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		.bsk-land__info {
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+		}
+
+		&__link {
+			margin-top: 0.43em;
+			@include bold-link;
+			text-align: left;
+		}
+
+		&__time {
+			&-hour {
+				padding-bottom: 2%;
+
+				@include bold-link;
+				text-align: left;
+
+				color: #0072CD;
+
+			}
+
+			&-middle {
+				@include light-text;
+				font-weight: 700;
+				text-align: right;
+
+			}
+		}
+	}
+
+	.bks-mob {
+		z-index: 44;
+		position: relative;
+		margin-top: -2.5%;
+		margin-left: -5%;
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-right: 11%;
+		}
+
+		&__link {
+			margin-left: 4.5%;
+			width: 110%;
+			@include normal-link;
+
+			text-align: left;
+
+		}
+	}
+}
+
+.row-8 {
+	margin-bottom: 9.5em;
+	.bks-invest {
+		z-index: 43;
+		position: relative;
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-left: -9%;
+			margin-right: -8%;
+		}
+
+		&__link {
+			margin-top: -8%;
+			@include normal-link;
+
+			text-align: left;
+		}
+	}
+
+	.stamp {
+		z-index: 43;
+		position: relative;
+		margin-top: 5%;
+		margin-left: 17%;
+
+		&__img {
+			margin-right: 18.5%;
+		}
+
+		&__desc {
+			margin-top: 6%;
+			margin-left: -14.4%;
+			width: 110%;
+
+			@include light-text;
+			text-align: center;
+		}
+	}
+
+	.app-auto {
+		z-index: 43;
+		position: relative;
+		margin-top: -45%;
+		margin-left: 0;
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-right: -10%;
+		}
+
+		&__link {
+			margin-top: 7%;
+			width: 115%;
+
+			@include normal-link;
+			text-align: left;
+
+		}
+	}
+}
+
+.row-9 {
+	position: relative;
+	margin-top: -48em;
+	margin-bottom: 10.5em;
+	//@media screen and (max-width: 767px) {
+	//	margin-top: -33%;
+	//}
+
+	.frontol-app {
+		z-index: 42;
+		position: relative;
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-left: -7.2%;
+			margin-right: -7.2%;
+		}
+
+		&__link {
+			margin-top: -8.2%;
+			@include bold-link;
+			text-align: left;
+
+		}
+	}
+}
+
+.row-10 {
+	z-index: 41;
+	margin-bottom: 7em;
+
+	.case {
+		margin-top: -66%;
+
+		&__img {
+			margin-bottom: 4.5%;
+
+		}
+
+		&__link {
+			@include light-text;
+			text-align: center;
+
+			p:last-child {
+				margin-top: 3%;
+			}
+		}
+	}
+
+	.frontol-illust {
+		position: relative;
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			display: flex;
+
+			.illust-links {
+				&:first-child {
+					margin-right: 10px;
+				}
+			}
+		}
+
+		&__link {
+			margin-top: 2.5%;
+			width: 110%;
+			@include bold-link;
+			text-align: left;
+
+
+		}
+	}
+}
+
+.row-11 {
+	z-index: 40;
+	margin-bottom: 10.3em;
+
+	.bks-partners {
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-left: -8.3%;
+			margin-right: -8.3%;
+
+		}
+
+		&__link {
+			margin-top: -9.3%;
+			@include bold-link;
+			text-align: left;
+		}
+	}
+
+	.olivier {
+		position: relative;
+		margin-top: 6.4%;
+		margin-left: -3.7%;
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-right: 48%;
+			margin-bottom: 5%;
+		}
+
+		&__link {
+			margin-left: 3.3%;
+			width: 110%;
+			@include normal-link;
+			text-align: left;
+			//letter-spacing: 0.026em;
+
+		}
+	}
+}
+
+.row-12 {
+	z-index: 39;
+	margin-bottom: 10.6em;
+
+	.bks-items {
+		.bks-graph {
+			margin-right: 18%;
+			margin-bottom: 22.5%;
+			&:hover .link-active {
+				@include link-hover;
+			}
+			&__img {
+				margin-left: -2%;
+				margin-right: 61.5%;
+				margin-bottom: 6.6%;
+			}
+
+			&__link {
+				@include normal-link;
+				text-align: left;
+			}
+		}
+	}
+
+	.mob-cash {
+		position: relative;
+		margin-left: -0.5%;
+		margin-right: 45%;
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-right: 33.9%;
+			margin-bottom: 8.8%;
+		}
+
+		&__link {
+			//margin-left: 20px;
+			width: 110%;
+			@include normal-link;
+			text-align: left;
+
+		}
+	}
+
+	.song {
+		position: relative;
+		margin-left: 8.4%;
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-right: 0.6%;
+			margin-left: 0.6%;
+			margin-bottom: 8%;
+		}
+
+		&__link {
+			@include normal-link;
+			text-align: left;
+
+		}
+	}
+
+	.butcher {
+		position: relative;
+		margin-top: -35.5%;
+		margin-left: -20.2%;
+
+		&__img {
+			margin-right: -12.3%;
+		}
+
+		&__link {
+			margin-top: -13.8%;
+			margin-left: 11%;
+			@include light-text;
+			text-align: center;
+
+		}
+	}
+}
+
+.row-13 {
+	z-index: 38;
+	margin-bottom: 7.5em;
+
+	.marketing {
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-bottom: 3.5%;
+		}
+
+		&__info {
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+		}
+
+		&__link {
+			@include normal-link;
+			text-align: left;
+		}
+
+		&__desc {
+			@include light-text;
+			text-align: right;
+		}
+	}
+
+	.sun-cake {
+		position: relative;
+		margin-left: -12%;
+
+		&:hover .link-active {
+			@include link-hover;
+		}
+
+		&__img {
+			margin-right: -14%;
+		}
+
+		&__link {
+			margin-top: -10%;
+			margin-left: 107%;
+			width: 115%;
+			@include normal-link;
+			text-align: left;
+
+		}
+	}
+}
+
+.row-14 {
+	z-index: 37;
+	margin-bottom: 10.5em;
+
+	.icons {
+		&__img {
+			margin-left: -4.9%;
+			margin-right: -4.9%;
+
+		}
+
+		&__desc {
+			margin-top: -6%;
+			@include light-text;
+			text-align: center;
+		}
+	}
+}
+
+.row-15{
+	margin-bottom: 14em;
+}
+
+.footer {
+	height: 100%;
+
+	.page-info {
+		//исправить позднее
+		//min-height: 687px;
+		padding-bottom: 24.1%;
+		border-top: .18em solid #000;
+
+		&__desc {
+			padding: 3% 0;
+			margin-left: -1.6%;
+			margin-right: -1.6%;
+			width: 110%;
+			@include normal-link;
+			//line-height: 2.9rem;
+			line-height: 1.15;
+			p:first-child {
+				margin-bottom: 2.5%;
+			}
+		}
+
+	}
+
+	&__blocks {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 1%;
+		margin-bottom: 1.7%;
+		border-top: .18em solid #000;
+	}
+
+	&__year {
+		@include light-text;
+	}
+
+	&__links {
+		@include light-text;
+
+		.link-active {
+			margin-right: .8em;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	&__dash {
+		letter-spacing: -.11em;
+	}
+}

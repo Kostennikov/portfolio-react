@@ -1,0 +1,295 @@
+@import "mixins";
+@import "custom";
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+
+//white on black
+.header__link {
+	@include link-light;
+	margin-right: 1em;
+
+	&:last-child {
+		margin-right: 0;
+	}
+	&:hover {
+		@include light-hover;
+		color: #fff;
+	}
+}
+.ava__link {
+	@include link-light;
+	&:hover {
+		@include light-hover;
+		color: #fff;
+	}
+}
+.active {
+	padding: 0.15em 0.304em 0.2em;
+	color: #1A1A1A;
+	border-radius: 0.35em;
+	background-color: #fff;
+	border-bottom: none;
+
+	&:hover {
+		border: none;
+		color: #1A1A1A;
+	}
+}
+
+.header {
+	z-index: 1;
+	position: relative;
+	margin-top: 2.89em;
+	margin-bottom: -.2%;
+}
+
+.hero {
+	position: relative;
+	margin-top: -4em;
+
+	&-app {
+		position: relative;
+		//margin-top: -3%;
+		margin-left: -6.7%;
+		margin-right: -6.7%;
+		margin-bottom: 6%;
+
+		img {
+
+		}
+
+		&__desc {
+			position: absolute;
+			top: 9.7%;
+			left: 6%;
+			@include bold-link;
+			line-height: 1.1;
+			letter-spacing: 0.01em;
+			color: #fff;
+		}
+	}
+
+	&-buttons{
+		position: absolute;
+		bottom: 16.9%;
+		left: 8.9%;
+		&__items{
+			display: flex;
+			margin-bottom: 4%;
+		}
+		&__item{
+			margin-right: 1.8%;
+			width: 11em;
+			&:last-child{
+				width: 13em;
+			}
+		}
+		&__text{
+			@include middle-text;
+			color: #fff;
+		}
+	}
+}
+
+.row-0 {
+	margin-bottom: 5.7em;
+	&__desc {
+		margin-bottom: 2.1%;
+		@include middle-text;
+	}
+}
+
+.row-1 {
+	margin-bottom: 0;
+	&__title {
+		margin-bottom: 2.1%;
+		@include middle-text;
+		font-weight: 700;
+
+	}
+
+	&__desc {
+		@include middle-text;
+		margin-bottom: 5.5%;
+		p{
+			&:first-child{
+				margin-bottom: 2.1%;
+			}
+		}
+	}
+
+	&__img {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		//margin-left: -2.2%;
+		//margin-right: -2.2%;
+
+
+		img {
+			width: 100%;
+			margin-bottom: 3%;
+		}
+		p{
+			@include middle-text;
+		}
+	}
+	&__left{
+		padding-right: 2.3%;
+	}
+	&__right{
+		padding-left: 2.3%;
+	}
+}
+
+.row-2 {
+	position: relative;
+	margin-bottom: 2.65%;
+	padding: 2.5% 0 1.7% 0;
+	&__title {
+		margin-bottom: 2%;
+		@include middle-text;
+		font-weight: 500;
+		letter-spacing: 0.015em;
+	}
+
+	&__desc {
+		@include middle-text;
+		margin-bottom: 3%;
+	}
+
+	&__img {
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 1.2%;
+		img {
+			width: 100%;
+
+		}
+	}
+	&__first{
+		margin-left: -9.7%;
+		margin-right: -9%;
+	}
+	&__second{
+		margin-left: -26.7%;
+		margin-right: 8%;
+
+	}
+	&__third{
+		margin-left: -9.7%;
+		margin-right: -9%;
+
+	}
+}
+
+.row-3 {
+	overflow: hidden;
+	margin-bottom: 4.2%;
+
+	&__title {
+		margin-bottom: 2.1%;
+		@include middle-text;
+		font-weight: 700;
+	}
+
+	&__desc {
+		margin-bottom: 5.2%;
+		@include middle-text;
+	}
+
+	&__img {
+		position: relative;
+		margin-left: -6.7%;
+		margin-right: -6.7%;
+		margin-bottom: 1.2%;
+	}
+	&__img1 {
+		width: 94.5%;
+		margin-left: 2.8%;
+	}
+	&__img2 {
+		position: absolute;
+		width: 24.3%;
+		top: 18.2%;
+		left: -5%;
+	}
+	&__img3 {
+		position: absolute;
+		width: 42.5%;
+		right: -5.8%;
+		bottom: 19.8%;
+	}
+}
+
+.row-4 {
+	position: relative;
+	padding: 2.55% 0 5.8% 0;
+
+	&__title {
+		margin-bottom: 2%;
+		@include middle-text;
+		font-weight: 700;
+
+	}
+
+	&__desc {
+		@include middle-text;
+		margin-bottom: 3.2%;
+	}
+
+	&__img{
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 6%;
+		margin-left: -3.7%;
+		margin-right: -3.7%;
+
+	}
+	&__first{
+		margin-left: -9.7%;
+		margin-right: -9%;
+	}
+	&__second{
+		margin-left: -26.7%;
+		margin-right: 8%;
+
+	}
+	&__third{
+		margin-left: -9.7%;
+		margin-right: -9%;
+
+	}
+}
+
+.footer {
+	height: 100%;
+	position: relative;
+	.page-info {
+		padding-top: 1.7%;
+		padding-bottom: 19%;
+		border-top: .2em solid #000;
+	}
+
+	&-buttons{
+		position: absolute;
+		top: 24%;
+		left: 2.3%;
+		&__items{
+			display: flex;
+			margin-bottom: 4%;
+		}
+		&__item{
+			margin-right: 1.8%;
+			width: 11em;
+			&:last-child{
+				width: 13em;
+			}
+		}
+		&__text{
+			@include middle-text;
+			color: #fff;
+		}
+	}
+
+}

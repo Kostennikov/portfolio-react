@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Видеозвонки для 1С</title>
+	<link rel="stylesheet" href="scss/layout.scss">
+	<link rel="stylesheet" href="scss/video-chat-1c.scss">
+	<link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+	<link rel="preload" href="fonts/Formular.woff2" as="font" type="font/woff2" crossorigin>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="js/emerge.js"></script>
+	<!--	<script src='js/jquery.hyphen.ru.js'></script>-->
+
+</head>
+<body class="page">
+<header class="header emerge" data-effect="relax" data-duration="300" data-continue="true">
+	<div class="container">
+		<div class="row">
+			<div class="сol-12 col-xl-12">
+				<div class="header__title emerge" data-effect="fade" data-duration="200">
+					<div class="header__name">
+						<img class="header__name-img" srcset="img/ava@2x.png 2x" src="img/ava.png" alt="">
+						<a class="ava__link" href="/">Ярослав Туголуковский</a>
+					</div>
+					<div class="header__links">
+						<a class="header__link active" href="video-chat-1c.html">Видеозвонки</a>
+						<a class="header__link" href="menu-1c.html">Меню</a>
+						<a class="header__link" href="app-1c.html">Мобильная&nbsp;касса</a>
+						<a class="header__link" href="1c-prosto.html">Сайт&nbsp;1С&nbsp;Просто</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<section class="row-1">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-xl-12">
+				<div class="video-chat emerge" data-effect="slide" data-duration="150" data-down="10%"
+				     data-continue="true">
+					<div class="video-chat__img">
+						<picture>
+							<source srcset="img/hero/hero-1c-video-mob@2x.webp 2x"
+							        src="img/hero/hero-1c-video-mob.webp"
+							        type="image/webp" media="(max-width: 767px)"/>
+							<source srcset="img/hero/hero-1c-video-mob@2x.webp 2x"
+							        src="img/hero/hero-1c-video-mob.webp" type="image/webp"
+							        media="(max-width: 767px)"/>
+
+							<source srcset="img/hero/1c-video-hero@2x.webp 2x"
+							        src="img/hero/1c-video-hero.webp" type="image/webp"/>
+							<img srcset="img/hero/1c-video-hero@2x.png 2x" src="img/hero/1c-video-hero.png"
+							     alt="">
+						</picture>
+					</div>
+					<div class="video-chat__title">
+						<h5>Видеозвонки <span class="br-mob-inline">для</span> 1С</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="signature signature__video-chat emerge" data-effect="slide" data-duration="300" data-down="10%"
+     data-continue="true">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 offset-0 col-md-7 offset-md-1 br-desk scroll no-scroll">
+				<div class="sign">
+					<div class="sign-icon">
+						<img src="img/sign-icon-black.svg" alt="">
+					</div>
+					<div class="sign-text emerge" data-effect="slide" data-duration="800" data-right="25%"
+					     data-continue="true">
+						<p>На компьютере работа выглядит сочнее</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row-1">
+	<div class="container">
+		<div class="row emerge" data-effect="slide" data-duration="800" data-down="25%" data-continue="true">
+			<div class="col-sm-12 offset-sm-0 col-md-7 col-lg-7 col-xl-7 offset-md-1">
+				<div class="video-chat__guide">
+					<div class="video-chat__desc">
+						<p>1C не нуждается в представлении. С компанией знакомы либо лично,
+							либо по стереотипам (некоторые из которых правдивы).
+						</p>
+						<p>Недавно в 1С появились чаты и видеозвонки, которыми пользуются
+							многие сотрудники и клиенты компании. Они давно привыкли к программе и её
+							особенностям,
+							поэтому важно было сделать дизайн, привычный пользователям 1С, но при
+							этом свежий, удобный и неконфликтующий с программами для созвонов.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 offset-sm-0 col-md-3 col-lg-3 col-xl-3 offset-md-1">
+				<div class="video-chat__guide-right emerge" data-effect="slide" data-duration="800"
+				     data-down="25%" data-continue="true">
+					<div class="video-chat__desc-right">
+						<img class="img-like" src="img/like.svg" loading="lazy" alt="">
+						<p>Отдельное спасибо ребятам из 1С за активное участие и смелость.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<section class="row-2 no-scroll">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-xl-12">
+				<div class="preview emerge" data-effect="slide" data-duration="300" data-down="10%"
+				     data-continue="true">
+					<div class="preview__img">
+						<picture>
+							<source srcset="img/preview@2x.webp 2x" src="img/preview.webp" type="image/webp"/>
+							<img srcset="img/preview@2x.png 2x" src="img/preview.png"
+							     loading="lazy"
+							     alt="">
+						</picture>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="row-3 emerge" data-effect="slide" data-duration="300" data-down="10%" data-continue="true">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-xl-12">
+				<div class="row-3__title">
+					<h5 class="br-mob">Сетка без лишней пустоты</h5>
+					<h5 class="br-desk">Обрезанные картинки можно скроллить вбок</h5>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-2 col-lg-2 col-xl-2">
+				<div class="row-3__left">
+					<img src="img/no-camera.svg" alt="">
+					<p>Одна из фишек &mdash; другой подход к сетке. <span>Участники без камеры не занимают
+						место в центре экрана, а располагаются сверху в аккуратных плашках.</span>
+						<span class="br-desk">В основной сетке отображаются только участники с включёнными камерами.</span>
+					</p>
+				</div>
+			</div>
+			<div class="col-md-8 col-lg-8 col-xl-8">
+				<div class="row-3__img">
+					<picture>
+						<source srcset="img/no-camera@2x.webp 2x" src="img/no-camera.webp" type="image/webp"/>
+						<img srcset="img/no-camera@2x.png 2x" src="img/no-camera.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+			<div class="col-md-2 col-lg-2 col-xl-2">
+				<div class="row-3__right">
+					<img src="img/camera.svg" alt="">
+					<p class="br-mob">В основной сетке отображаются только участники с включёнными
+						камерами.</p>
+					<p class="br-desk">Сетка всегда равномерно<br> заполняет пространство.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-xl-12">
+				<div class="grid">
+					<div class="grid__img">
+						<img src="img/grid.svg" media="(min-width: 768px)" alt="">
+						<!--						<img src="img/table-mob.svg" media="(max-width: 767px)" alt="">-->
+						<svg width="100%" height="100%" class="br-desk" viewBox="0 0 366 346" fill="none"
+						     xmlns="http://www.w3.org/2000/svg">
+							<g filter="url(#filter0_dd_2825_9934)">
+								<rect x="10" y="5.00049" width="167.645" height="102.27" fill="#FAFAFA"/>
+								<rect x="10.5" y="5.50049" width="166.645" height="101.27" stroke="#C8C8C8"/>
+							</g>
+							<rect x="16.3256" y="17.7988" width="76.0263" height="83.1463" stroke="#B8B5A8"/>
+							<rect x="95.2937" y="17.7988" width="76.0263" height="83.1463" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<g filter="url(#filter1_dd_2825_9934)">
+								<rect x="187.646" y="5" width="167.645" height="102.27" fill="#FAFAFA"/>
+								<rect x="188.146" y="5.5" width="166.645" height="101.27" stroke="#C8C8C8"/>
+							</g>
+							<rect x="193.971" y="17.7983" width="76.0263" height="41.0732" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="272.939" y="17.7983" width="76.0263" height="41.0732" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="233.455" y="61.8132" width="76.0263" height="39.1313" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<g filter="url(#filter2_dd_2825_9934)">
+								<rect x="10" y="116" width="167.645" height="102.27" fill="#FAFAFA"/>
+								<rect x="10.5" y="116.5" width="166.645" height="101.27" stroke="#C8C8C8"/>
+							</g>
+							<rect x="16.3256" y="128.798" width="76.0263" height="40.4259" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="95.2937" y="128.798" width="76.0263" height="40.4259" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="16.3256" y="172.166" width="76.0263" height="39.7786" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="95.2937" y="172.166" width="76.0263" height="39.7786" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<g filter="url(#filter3_dd_2825_9934)">
+								<rect x="187.354" y="116" width="167.645" height="102.27" fill="#FAFAFA"/>
+								<rect x="187.854" y="116.5" width="166.645" height="101.27" stroke="#C8C8C8"/>
+							</g>
+							<rect x="193.68" y="128.798" width="76.0263" height="40.4259" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="272.648" y="128.798" width="76.0263" height="40.4259" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="193.68" y="172.166" width="49.4878" height="39.7786" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="246.11" y="172.166" width="50.1351" height="39.7786" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="299.187" y="172.166" width="49.4878" height="39.7786" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<g filter="url(#filter4_dd_2825_9934)">
+								<rect x="10" y="228" width="167.645" height="102.27" fill="#FAFAFA"/>
+								<rect x="10.5" y="228.5" width="166.645" height="101.27" stroke="#C8C8C8"/>
+							</g>
+							<rect x="16.3256" y="240.798" width="49.4878" height="40.4259" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="68.7554" y="240.798" width="50.1351" height="40.4259" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="121.832" y="240.798" width="49.4878" height="40.4259" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="16.3256" y="284.166" width="49.4878" height="39.7786" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="68.7554" y="284.166" width="50.1351" height="39.7786" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="121.832" y="284.166" width="49.4878" height="39.7786" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<g filter="url(#filter5_dd_2825_9934)">
+								<rect x="187.354" y="228" width="167.645" height="102.27" fill="#FAFAFA"/>
+								<rect x="187.854" y="228.5" width="166.645" height="101.27" stroke="#C8C8C8"/>
+							</g>
+							<rect x="193.68" y="240.798" width="49.4878" height="40.4259" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="246.11" y="240.798" width="50.1351" height="40.4259" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="299.187" y="240.798" width="49.4878" height="40.4259" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="193.68" y="284.166" width="36.5422" height="39.7786" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="233.164" y="284.166" width="36.5422" height="39.7786" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="272.648" y="284.166" width="37.1895" height="39.7786" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<rect x="312.78" y="284.166" width="35.8949" height="39.7786" fill="#FAFAFA"
+							      stroke="#C1C1C1"/>
+							<defs>
+								<filter id="filter0_dd_2825_9934" x="0" y="0.000488281" width="187.646"
+								        height="122.27" filterUnits="userSpaceOnUse"
+								        color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+									<feColorMatrix in="SourceAlpha" type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+									               result="hardAlpha"/>
+									<feOffset dy="5"/>
+									<feGaussianBlur stdDeviation="5"/>
+									<feColorMatrix type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+									<feBlend mode="normal" in2="BackgroundImageFix"
+									         result="effect1_dropShadow_2825_9934"/>
+									<feColorMatrix in="SourceAlpha" type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+									               result="hardAlpha"/>
+									<feOffset dy="1"/>
+									<feGaussianBlur stdDeviation="1"/>
+									<feColorMatrix type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+									<feBlend mode="normal" in2="effect1_dropShadow_2825_9934"
+									         result="effect2_dropShadow_2825_9934"/>
+									<feBlend mode="normal" in="SourceGraphic"
+									         in2="effect2_dropShadow_2825_9934" result="shape"/>
+								</filter>
+								<filter id="filter1_dd_2825_9934" x="177.646" y="0" width="187.646"
+								        height="122.27" filterUnits="userSpaceOnUse"
+								        color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+									<feColorMatrix in="SourceAlpha" type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+									               result="hardAlpha"/>
+									<feOffset dy="5"/>
+									<feGaussianBlur stdDeviation="5"/>
+									<feColorMatrix type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+									<feBlend mode="normal" in2="BackgroundImageFix"
+									         result="effect1_dropShadow_2825_9934"/>
+									<feColorMatrix in="SourceAlpha" type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+									               result="hardAlpha"/>
+									<feOffset dy="1"/>
+									<feGaussianBlur stdDeviation="1"/>
+									<feColorMatrix type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+									<feBlend mode="normal" in2="effect1_dropShadow_2825_9934"
+									         result="effect2_dropShadow_2825_9934"/>
+									<feBlend mode="normal" in="SourceGraphic"
+									         in2="effect2_dropShadow_2825_9934" result="shape"/>
+								</filter>
+								<filter id="filter2_dd_2825_9934" x="0" y="111" width="187.646"
+								        height="122.27" filterUnits="userSpaceOnUse"
+								        color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+									<feColorMatrix in="SourceAlpha" type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+									               result="hardAlpha"/>
+									<feOffset dy="5"/>
+									<feGaussianBlur stdDeviation="5"/>
+									<feColorMatrix type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+									<feBlend mode="normal" in2="BackgroundImageFix"
+									         result="effect1_dropShadow_2825_9934"/>
+									<feColorMatrix in="SourceAlpha" type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+									               result="hardAlpha"/>
+									<feOffset dy="1"/>
+									<feGaussianBlur stdDeviation="1"/>
+									<feColorMatrix type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+									<feBlend mode="normal" in2="effect1_dropShadow_2825_9934"
+									         result="effect2_dropShadow_2825_9934"/>
+									<feBlend mode="normal" in="SourceGraphic"
+									         in2="effect2_dropShadow_2825_9934" result="shape"/>
+								</filter>
+								<filter id="filter3_dd_2825_9934" x="177.354" y="111" width="187.646"
+								        height="122.27" filterUnits="userSpaceOnUse"
+								        color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+									<feColorMatrix in="SourceAlpha" type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+									               result="hardAlpha"/>
+									<feOffset dy="5"/>
+									<feGaussianBlur stdDeviation="5"/>
+									<feColorMatrix type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+									<feBlend mode="normal" in2="BackgroundImageFix"
+									         result="effect1_dropShadow_2825_9934"/>
+									<feColorMatrix in="SourceAlpha" type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+									               result="hardAlpha"/>
+									<feOffset dy="1"/>
+									<feGaussianBlur stdDeviation="1"/>
+									<feColorMatrix type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+									<feBlend mode="normal" in2="effect1_dropShadow_2825_9934"
+									         result="effect2_dropShadow_2825_9934"/>
+									<feBlend mode="normal" in="SourceGraphic"
+									         in2="effect2_dropShadow_2825_9934" result="shape"/>
+								</filter>
+								<filter id="filter4_dd_2825_9934" x="0" y="223" width="187.646"
+								        height="122.27" filterUnits="userSpaceOnUse"
+								        color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+									<feColorMatrix in="SourceAlpha" type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+									               result="hardAlpha"/>
+									<feOffset dy="5"/>
+									<feGaussianBlur stdDeviation="5"/>
+									<feColorMatrix type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+									<feBlend mode="normal" in2="BackgroundImageFix"
+									         result="effect1_dropShadow_2825_9934"/>
+									<feColorMatrix in="SourceAlpha" type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+									               result="hardAlpha"/>
+									<feOffset dy="1"/>
+									<feGaussianBlur stdDeviation="1"/>
+									<feColorMatrix type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+									<feBlend mode="normal" in2="effect1_dropShadow_2825_9934"
+									         result="effect2_dropShadow_2825_9934"/>
+									<feBlend mode="normal" in="SourceGraphic"
+									         in2="effect2_dropShadow_2825_9934" result="shape"/>
+								</filter>
+								<filter id="filter5_dd_2825_9934" x="177.354" y="223" width="187.646"
+								        height="122.27" filterUnits="userSpaceOnUse"
+								        color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+									<feColorMatrix in="SourceAlpha" type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+									               result="hardAlpha"/>
+									<feOffset dy="5"/>
+									<feGaussianBlur stdDeviation="5"/>
+									<feColorMatrix type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+									<feBlend mode="normal" in2="BackgroundImageFix"
+									         result="effect1_dropShadow_2825_9934"/>
+									<feColorMatrix in="SourceAlpha" type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+									               result="hardAlpha"/>
+									<feOffset dy="1"/>
+									<feGaussianBlur stdDeviation="1"/>
+									<feColorMatrix type="matrix"
+									               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+									<feBlend mode="normal" in2="effect1_dropShadow_2825_9934"
+									         result="effect2_dropShadow_2825_9934"/>
+									<feBlend mode="normal" in="SourceGraphic"
+									         in2="effect2_dropShadow_2825_9934" result="shape"/>
+								</filter>
+							</defs>
+						</svg>
+
+					</div>
+					<div class="grid__text">
+						<p>Сетка всегда<br> равномерно<br> заполняет<br> пространство</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="row-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-xl-12">
+				<div class="row-4__img emerge" data-effect="slide" data-duration="300" data-down="10%"
+				     data-continue="true">
+					<picture>
+						<source srcset="img/screen@2x.webp 2x" src="img/screen.webp" type="image/webp"/>
+						<img srcset="img/screen@2x.png 2x" src="img/screen.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="row-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-lg-4 col-xl-4 order-two">
+				<div class="row-5__img1 emerge" data-effect="slide" data-duration="300" data-down="10%"
+				     data-continue="true">
+					<picture>
+						<source srcset="img/camera-emoji@2x.webp 2x" src="img/camera-emoji.webp"
+						        type="image/webp"/>
+						<img srcset="img/camera-emoji@2x.png 2x" src="img/camera-emoji.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-xl-4 offset-1">
+				<div class="row-5__img2 emerge" data-effect="slide" data-duration="300" data-down="10%"
+				     data-continue="true">
+					<picture>
+						<source srcset="img/camera-emoji2@2x.webp 2x" src="img/camera-emoji2.webp"
+						        type="image/webp"/>
+						<img srcset="img/camera-emoji2@2x.png 2x" src="img/camera-emoji2.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3 col-xl-3 order-one">
+				<div class="row-5__text emerge" data-effect="slide" data-duration="300" data-down="10%"
+				     data-continue="true">
+					<div class="row-5__text-title">
+						<h5>Ещё одна фишка &mdash; эмодзи у участников без камеры</h5>
+					</div>
+					<div class="row-5__text-desc">
+						<p>С ними интерфейс выглядит гораздо опрятнее, живее и дружелюбнее. По умолчанию
+							назначается случайный смайлик, но можно выбрать и самому. Программа
+							запомнит выбор и в следующий раз сама подсветит ранее выбранный
+							вариант.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="row-6">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-8 col-lg-8 col-xl-8">
+				<div class="row-6__img emerge" data-effect="slide" data-duration="300" data-down="10%"
+				     data-continue="true">
+					<picture>
+						<source srcset="img/quick-access@2x.webp 2x" src="img/quick-access.webp"
+						        type="image/webp"/>
+						<img srcset="img/quick-access@2x.png 2x" src="img/quick-access.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+			<div class="col-12 col-md-3 col-lg-3 col-xl-3 offset-md-1 order-one">
+				<div class="row-6__text emerge" data-effect="slide" data-duration="300" data-down="10%"
+				     data-continue="true">
+					<div class="row-6__text-title">
+						<h5>Удобное дублирование</h5>
+					</div>
+					<div class="row-6__text-desc">
+						<p>Во время звонков пользователи много времени проводят внутри 1С, поэтому в
+							шапке дублируются все кнопки управления.
+						</p>
+						<p>Можно быстро выйти из режима демонстрации экрана или управлять звуком и
+							камерой. </p>
+					</div>
+					<div class="row-6__posts">
+						<img class="row-6__posts-img" src="img/green-arrow.svg" alt="">
+						<p>В компактном режиме можно управлять фунциями звонка, не возвращаясь в
+							полное окно.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="row-7">
+	<div class="container">
+		<div class="row emerge" data-effect="slide" data-duration="300" data-down="10%" data-continue="true">
+			<div class="col-md-2 col-lg-2 col-xl-2 offset-5">
+				<div class="row-7__left">
+					<div class="row-7__img">
+						<img src="img/pencil.svg" alt="">
+					</div>
+					<div class="row-7__text">
+						<p>Название встречи <br> по&nbsp;умолчанию &mdash;<br> это время встречи</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3 col-xl-3 offset-2">
+				<div class="row-7__right">
+					<div class="row-7__img">
+						<img src="img/target.svg" alt="">
+					</div>
+					<div class="row-7__text">
+						<p>Большая область нажатия<br>и&nbsp;размещение на&nbsp;краю экрана<br>обеспечивают
+							точное попадание
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="row-8">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-3 col-lg-3 col-xl-3 offset-md-1">
+				<div class="row-8__text emerge" data-effect="slide" data-duration="300" data-down="10%"
+				     data-continue="true">
+					<div class="row-8__text-title">
+						<h5>Демонстрация экрана</h5>
+					</div>
+					<div class="row-8__text-desc">
+						<p>При демонстрации экрана больше всего напрягает интерфейс программы. В Зуме,
+							например, огромная плашка, которую нельзя скрыть, она только и делает, что
+							заставляет двигать себя туда-сюда всё время демонстрации.
+						</p>
+						<p>Мы сделали проще &mdash; скрыли плашку и показываем при наведении
+							мыши на верхнюю границу экрана.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 col-md-8 col-lg-8 col-xl-8">
+				<div class="row-8__img emerge" data-effect="slide" data-duration="300" data-down="10%"
+				     data-continue="true">
+					<picture>
+						<source srcset="img/screen-demo2@2x.webp 2x" src="img/screen-demo2.webp"
+						        type="image/webp"/>
+						<img srcset="img/screen-demo2@2x.png 2x" src="img/screen-demo2.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer class="footer emerge" data-effect="slide" data-duration="300" data-down="10%" data-continue="true">
+	<div class="container">
+		<div class="footer__container">
+			<div class="row">
+				<div class="col-12">
+					<div class="page-info">
+						<div class="page-info__made">
+							<img src="img/checked.svg" alt="">
+							<p>Сделано&nbsp;в 2020&nbsp;году<br class="br-mob"> за 4 недели</p>
+						</div>
+						<div class="page-info__persons no-scroll">
+
+							<div class="page-info__person">
+								<img srcset="img/ava@2x.png" src="img/ava.png" alt="">
+								<div class="page-info__data">
+									<div class="page-info__data-name">
+										<a href="index.html">Ярослав
+											<br> Туголуковский</a>
+									</div>
+									<div class="page-info__data-proff">
+										<p>арт-директор</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="page-info__person">
+								<img srcset="img/ava-anna@2x.png" src="img/ava-anna.png" alt="">
+								<div class="page-info__data">
+									<div class="page-info__data-name">
+										<a href="https://www.behance.net/Ryashentseva"
+										   target="_blank">Анна<br>Ряшенцева</a>
+									</div>
+									<div class="page-info__data-proff">
+										<p>дизайнер</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="page-info__feedback">
+							<div class="page-info__feedback-desc">
+								<p>См.&nbsp;дальше:</p>
+								<a class="page-info__feedback-link" href="menu-1c.html">Меню</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div
+					class="col-sm-12 offset-sm-0 col-md-4 offset-md-1 col-lg-4 offset-lg-1 col-xl-4 offset-xl-1">
+					<div class="mobile-link emerge" data-effect="slide" data-duration="300" data-up="20px"
+					     data-left="25%" data-continue="true">
+						<div class="mobile-link__img">
+							<a class="img-link" href="menu-1c.html">
+								<picture>
+									<source srcset="img/favor@2x.webp 2x" src="img/favor.webp"
+									        type="image/webp">
+									<img srcset="img/favor@2x.png 2x" src="img/favor.png" loading="lazy"
+									     alt="">
+								</picture>
+							</a>
+						</div>
+
+						<div class="mobile-link__link">
+							<a class="link-active" href="menu-1c.html"><span>Далее:</span> Большое <br>
+								обновление меню <br>
+								платформы 1С</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="footer__blocks">
+					<div class="footer__year">
+						<p>&#169; 2013 <span class="footer__dash">———</span>
+							<span class="footer__dash-mob">—————————————————————</span>
+							<span class="current-year">&nbsp;</span>
+						</p>
+					</div>
+
+					<div class="footer__links">
+						<a class="link-active"
+						   href="mailto:tugolukovskiy@gmail.com">tugolukovskiy@gmail.com</a>
+						<a class="link-active" href="https://t.me/tugolukovskiy" target="_blank">телеграм</a>
+						<a class="link-active link-margin" href="https://www.instagram.com/tugolukovskiy/"
+						   target="_blank">инста<span class="link-active__inst">грам</span></a>
+						<a class="link-active link-deactive link-lang br-mob-inline"
+						   href="javascript:void(0)">ру</a>
+						<img class="lang-arrow br-mob-inline" src="img/lang-arrow.svg" alt="">
+						<a class="link-active br-mob-inline" href="./en/video-chat-1c-en.html">en</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

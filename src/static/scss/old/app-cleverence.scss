@@ -1,0 +1,195 @@
+@import "mixins";
+@import "custom";
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+
+p {
+	margin-bottom: 0;
+}
+
+.ava__link {
+	@include link-dark;
+	color: #fff;
+	&:hover {
+		@include light-hover;
+		color: #fff;
+	}
+}
+
+.active {
+	padding: 0.15em 0.304em 0.2em;
+	color: #fff;
+	border-radius: 0.35em;
+	background-color: #1A1A1A;
+	border-bottom: none;
+}
+
+.header {
+	z-index: 1;
+	position: relative;
+	margin-top: 2.89em;
+	margin-bottom: -.2%;
+
+	&__name {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		font-size: 1.428em;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: 0.01em;
+		text-align: left;
+		color: #FAFAFA;
+		&-img {
+			width: 1.75em;
+			margin-right: .88%;
+		}
+	}
+
+	&__link{
+		color: #FAFAFA;
+		&:hover{
+			color: #FAFAFA;
+		}
+	}
+	&__title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__links {
+		display: flex;
+		align-items: center;
+		font-size: 1.428em;
+		font-weight: 500;
+		line-height: 1.2;
+		letter-spacing: 0.01em;
+		text-align: left;
+
+		.link-active {
+			margin-right: 20px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.hero{
+	margin-top: -3.9em;
+	&-app{
+		position: relative;
+		//margin-top: -3%;
+		margin-left: -6.7%;
+		margin-right: -6.7%;
+		margin-bottom: 6%;
+		img{
+
+		}
+		&__desc{
+			position: absolute;
+			top: 10.4%;
+			left: 6%;
+			@include bold-link;
+			line-height: 1.1;
+			letter-spacing: 0.02em;
+			color: #FAFAFA;
+		}
+	}
+}
+
+.company{
+
+	&__desc{
+		margin-bottom: 10.5%;
+		@include middle-text;
+	}
+}
+
+.main-screen{
+	margin-bottom: 4em;
+	&__title{
+		margin-bottom: 2.1%;
+		@include middle-text;
+		font-weight: 500;
+
+	}
+	&__desc{
+		@include middle-text;
+	}
+	&__img{
+		margin-top: 2.3%;
+		margin-left: -2.2%;
+		margin-right: -2.2%;
+	}
+}
+
+.system{
+	margin-bottom: 6.8em;
+	&__title{
+		margin-bottom: 2.1%;
+		@include middle-text;
+		font-weight: 500;
+	}
+	&__desc{
+		margin-bottom: 5.3%;
+		@include middle-text;
+		p:first-child{
+			margin-bottom: 2%;
+		}
+	}
+	&__screens-left{
+		display: flex;
+		margin-bottom: 8.6%;
+		img{
+			width: 50%;
+			height: 50%;
+			margin-right: 2.7%;
+		}
+	}
+	&__screens-right{
+		display: flex;
+		margin-bottom: 8.6%;
+		img{
+			width: 50%;
+			height: 50%;
+			margin-left: 2.7%;
+		}
+	}
+	&__pics{
+		margin-top: 4%;
+		margin-bottom: 5.5%;
+
+		@include middle-text;
+	}
+}
+
+.design{
+	margin-bottom: 14em;
+	&__title{
+		margin-bottom: 2.1%;
+		@include middle-text;
+		font-weight: 500;
+	}
+	&__desc{
+		margin-bottom: 5.1%;
+		@include middle-text;
+	}
+}
+
+.footer {
+	height: 100%;
+
+	.page-info {
+		//исправить позднее
+		//min-height: 687px;
+		padding-top: 1.8%;
+		padding-bottom: 24%;
+		border-top: .2em solid #000;
+		&__made {
+			width: 13.7em;
+		}
+	}
+}

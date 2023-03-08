@@ -1,0 +1,244 @@
+@import "mixins";
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
+
+.header {
+	z-index: 1;
+	position: relative;
+	margin-bottom: 0;
+
+	@media (min-width: 768px) {
+		margin-top: 2.1%;
+		margin-bottom: -.2%;
+	}
+}
+
+.row-0 {
+	margin-bottom: 12em;
+
+	&__title {
+		margin-bottom: 0.6em;
+		width: 80%;
+		@include bold-link;
+		line-height: 1.1;
+		font-size: 13.2em;
+		letter-spacing: 0;
+		@media (min-width: 768px) {
+			display: none;
+		}
+	}
+
+	&__desc {
+		margin-bottom: 2.1%;
+		@include mob-regular;
+
+		@media (min-width: 768px) {
+			@include middle-text;
+		}
+	}
+}
+
+.presentations {
+	position: relative;
+	margin-bottom: 61.7em;
+	margin-top: 49.5em;
+
+	@media (min-width: 768px) {
+		margin-top: 0;
+		margin-bottom: 18.7em;
+	}
+
+	.pic {
+		margin-left: -49%;
+		margin-right: -49%;
+		transform: rotate(90deg);
+		@media (min-width: 768px) {
+			margin-left: -8%;
+			margin-right: -8%;
+			transform: none;
+		}
+
+		&:before {
+			content: none;
+			position: absolute;
+			top: 8%;
+			right: 0.6%;
+			width: 15em;
+			height: 100%;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-image: url(../img/logo.svg);
+			@media (min-width: 768px) {
+				content: '';
+			}
+		}
+
+		&__title {
+			position: absolute;
+			left: .65%;
+			top: 5.2%;
+			@include bold-link;
+			line-height: 1.1;
+		}
+
+		&__info {
+			position: absolute;
+			left: 9%;
+			top: 85.7%;
+			width: 30%;
+			@include mob-regular;
+			text-align: left;
+			@media (min-width: 768px) {
+				@include middle-text;
+			}
+
+			//@media (min-width: 1260px) and (max-width: 1919px) {
+			//	line-height: 2.1875rem;
+			//}
+			//@media (min-width: 768px) and (max-width: 1259px) {
+			//	line-height: 1.1875rem;
+			//}
+			//@media screen and (max-width: 767px) {
+			//	line-height: 0.1875rem;
+			//}
+			p:first-child {
+				margin-bottom: 4%;
+			}
+		}
+
+		&__desc {
+			position: absolute;
+			right: 9%;
+			bottom: 5.5%;
+			@include normal-link;
+			line-height: 1.1;
+			text-align: left;
+
+		}
+
+	}
+}
+
+.pics {
+	margin-bottom: 18.5em;
+	@media (min-width: 768px) {
+		margin-bottom: 10.5em;
+	}
+
+	.pic-row {
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 2.5em;
+
+		@media (min-width: 768px) {
+			margin-left: 1.1%;
+			margin-right: 1.1%;
+			margin-bottom: 1.2%;
+		}
+	}
+
+	.pic {
+		height: 100%;
+
+		&__img {
+			height: 100%;
+		}
+
+		&__text {
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			@include bold-link;
+			line-height: 1.1;
+			font-size: 13.2em;
+			letter-spacing: 0;
+			text-align: center;
+			color: #1A1A1A;
+
+			&-long {
+				padding: 1em 0;
+				@media (min-width: 768px) {
+					padding: 0;
+				}
+			}
+
+			@media (min-width: 768px) {
+				font-size: 3.57em;
+				font-weight: 700;
+				line-height: 1.1;
+				letter-spacing: 0.01em;
+			}
+		}
+	}
+}
+
+.conclusion {
+	margin-bottom: 28em;
+	@media (min-width: 768px) {
+		margin-bottom: 9.7em;
+	}
+
+	&__text {
+		@include bold-link;
+		line-height: 1.1;
+		font-size: 13.2em;
+		letter-spacing: 0;
+		text-align: center;
+		@media (min-width: 768px) {
+			@include bold-link;
+			font-size: 4.28em;
+			line-height: 1.1;
+		}
+
+
+	}
+}
+
+.feedback {
+	margin-bottom: 31em;
+
+	&__text {
+		font-size: 4.9em;
+		line-height: 1.1;
+		letter-spacing: .01em;
+		font-weight: 500;
+		text-align: center;
+	}
+}
+
+.footer {
+	height: 100%;
+
+	.page-info {
+		//исправить позднее
+		//min-height: 687px;
+
+		//padding-bottom: 24%;
+
+		&__feedback {
+			display: none;
+			flex-direction: column;
+			align-items: flex-end;
+			width: 100%;
+			margin-right: -1.3em;
+			@media (min-width: 768px) {
+				display: flex;
+			}
+
+			img {
+				width: 33em;
+				height: 6em;
+				margin-top: -1em;
+			}
+
+			&-desc {
+				margin-top: -.8em;
+				margin-right: 1.3em;
+				font-size: 1.1em;
+			}
+		}
+	}
+
+}

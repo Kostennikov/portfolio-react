@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Редизайн меню платформы 1С</title>
+	<link rel="stylesheet" href="scss/layout.scss">
+	<link rel="stylesheet" href="scss/menu-1c.scss">
+	<link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="js/emerge.js"></script>
+</head>
+<body class="page">
+<header class="header emerge" data-effect="relax" data-duration="300" data-continue="true">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="header__title emerge" data-effect="fade" data-duration="200">
+					<div class="header__name">
+						<img class="header__name-img" srcset="img/ava@2x.png 2x" src="img/ava.png" alt="">
+						<a class="ava__link" href="/">Ярослав Туголуковский</a>
+					</div>
+					<div class="header__links">
+						<a class="header__link" href="video-chat-1c.html">Видеозвонки</a>
+						<a class="header__link active" href="menu-1c.html">Меню</a>
+						<a class="header__link" href="app-1c.html">Мобильная&nbsp;касса</a>
+						<a class="header__link" href="1c-prosto.html">Сайт&nbsp;1С&nbsp;Просто</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="hero emerge" data-effect="slide" data-duration="200" data-down="10%" data-continue="true">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<div class="hero-app">
+					<picture>
+						<source srcset="img/hero/hero-1c-menu-mob@2x.webp 2x"
+						        src="img/hero/hero-1c-menu-mob.webp" type="image/webp"
+						        media="(max-width: 767px)"/>
+						<source srcset="img/hero/hero-1c-menu-mob@2x.png 2x"
+						        src="img/hero/hero-1c-menu-mob.png" media="(max-width: 767px)"/>
+
+						<source srcset="img/hero/1c-menu-hero@2x.webp 2x" src="img/hero/1c-menu-hero.webp"
+						        type="image/webp" media="(min-width: 768px)"/>
+						<img srcset="img/hero/1c-menu-hero@2x.jpg 2x" src="img/hero/1c-menu-hero.jpg"
+						     alt="">
+					</picture>
+					<div class="hero-app__desc br-mob">
+						<p>Редизайн меню <br>платформы 1С</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--<div class="signature signature__menu emerge" data-effect="slide" data-duration="300" data-down="10%"-->
+<!--     data-continue="true">-->
+<!--	<div class="container">-->
+<!--		<div class="row">-->
+<!--			<div class="col-sm-12 offset-0 col-md-7 offset-md-1 br-desk scroll no-scroll">-->
+<!--				<div class="sign">-->
+<!--					<div class="sign-icon">-->
+<!--						<img src="img/sign-icon-black.svg" alt="">-->
+<!--					</div>-->
+<!--					<div class="sign-text emerge" data-effect="slide" data-duration="800" data-right="25%"-->
+<!--					     data-continue="true">-->
+<!--						<p>На компьютере работа выглядит сочнее</p>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
+
+<div class="row-1">
+	<div class="container">
+		<div class="row emerge" data-effect="slide" data-duration="300" data-down="10%" data-continue="true">
+			<div class="col-12 col-md-7 col-lg-7 col-xl-7 offset-md-1">
+				<div class="hero-app__desc br-desk">
+					<h5>Редизайн меню <br>платформы 1С</h5>
+				</div>
+
+				<div class="row-1__title">
+					<h5>Проблемы</h5>
+				</div>
+				<div class="row-1__desc">
+					<p>Меню в 1С содержит ссылки одновременно на все разделы программы, которых очень много. С
+						одной стороны, это хорошее решение для больших компаний, потому что не нужно
+						настраивать меню для разных групп пользователей. С другой – бо́льшая часть ссылок
+						пользователям не нужна.<br> Бухгалтеры, например, вынуждены искать нужные ссылки среди
+						сотни ненужных, а привыкать к их расположению &mdash;
+						долго и утомительно. Настройки позволяют скрыть ненужные пункты, но мало
+						кто этим пользуется.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 offset-0 col-md-5 offset-md-1">
+				<div class="row-1__img row-1__left emerge" data-effect="slide" data-duration="800"
+				     data-right="25%" data-continue="true">
+					<picture>
+						<source srcset="img/menu-old-menu1@2x.webp 2x" src="img/menu-old-menu1.webp"
+						        type="image/webp"/>
+						<img srcset="img/menu-old-menu1@2x.png 2x" src="img/menu-old-menu1.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+					<p>Меню было рассчитано на большое количество ссылок, но, когда ссылок мало,
+						выглядело неряшливо.</p>
+				</div>
+			</div>
+			<div class="col-12 col-md-5">
+				<div class="row-1__img row-1__right emerge" data-effect="slide" data-duration="800"
+				     data-left="25%" data-continue="true">
+					<picture>
+						<source srcset="img/menu-old-menu2@2x.webp 2x" src="img/menu-old-menu2.webp"
+						        type="image/webp"/>
+						<img srcset="img/menu-old-menu2@2x.png 2x" src="img/menu-old-menu2.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+					<p>Ширина столбцов была разной и мешала целиться в ссылки.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row-2">
+	<div class="container">
+		<div class="row emerge" data-effect="slide" data-duration="300" data-down="10%" data-continue="true">
+			<div class="col-12 col-md-7 col-lg-7 col-xl-7 offset-md-1">
+				<div class="row-2__title">
+					<h5>Все эти и другие проблемы были решены</h5>
+				</div>
+				<div class="row-2__desc">
+					<p>Меню подтянулось и стало стройным, перестав загораживать пустотами весь экран.
+						Ширина столбцов фиксирована в каждом разделе независимо от ширины текста.
+						Столбцы собираются по правилу &laquo;слева больше&raquo;, но с учётом
+						привычек: то, что было в крайнем правом столбце, там и остаётся.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<div class="row-2__img row-2__top emerge" data-effect="slide" data-duration="300"
+				     data-down="10%" data-continue="true">
+					<picture>
+						<source srcset="img/menu-main-mob@2x.webp 2x"
+						        src="img/menu-main-mob.webp" type="image/webp"
+						        media="(max-width: 767px)"/>
+						<source srcset="img/menu-main-mob@2x.png 2x"
+						        src="img/menu-main-mob.png" media="(max-width: 767px)"/>
+
+						<source srcset="img/menu-main@2x.webp 2x" src="img/menu-main.webp"
+						        type="image/webp" media="(min-width: 768px)"/>
+						<img srcset="img/menu-main@2x.png 2x" src="img/menu-main.png"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12 col-md-3">
+				<div class="row-2__img row-2__first emerge" data-effect="slide" data-duration="300"
+				     data-down="10%" data-continue="true">
+					<picture>
+						<source srcset="img/menu-crm@2x.webp 2x" src="img/menu-crm.webp" type="image/webp"/>
+						<img srcset="img/menu-crm@2x.png 2x" src="img/menu-crm.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+			<div class="col-12 offset-0 col-md-4 offset-md-1">
+				<div class="row-2__img row-2__second emerge" data-effect="slide" data-duration="300"
+				     data-down="10%" data-continue="true">
+					<picture>
+						<source srcset="img/menu-buy@2x.webp 2x" src="img/menu-buy.webp" type="image/webp"/>
+						<img srcset="img/menu-buy@2x.png 2x" src="img/menu-buy.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+			<div class="col-12 offset-0 col-md-3 offset-md-1">
+				<div class="row-2__img row-2__third emerge" data-effect="slide" data-duration="300"
+				     data-down="10%" data-continue="true">
+					<picture>
+						<source srcset="img/menu-company@2x.webp 2x" src="img/menu-company.webp"
+						        type="image/webp"/>
+						<img srcset="img/menu-company@2x.png 2x" src="img/menu-company.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12 col-md-2">
+				<div class="row-2__img row-2__fourth emerge" data-effect="slide" data-duration="300"
+				     data-down="10%" data-continue="true">
+					<picture>
+						<source srcset="img/menu-ch1@2x.webp 2x" src="img/menu-ch1.webp" type="image/webp"/>
+						<img srcset="img/menu-ch1@2x.png 2x" src="img/menu-ch1.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+			<div class="col-12 offset-0 col-md-3 offset-md-1">
+				<div class="row-2__img row-2__fifth emerge" data-effect="slide" data-duration="300"
+				     data-down="10%" data-continue="true">
+					<picture>
+						<source srcset="img/menu-ch2@2x.webp 2x" src="img/menu-ch2.webp" type="image/webp"/>
+						<img srcset="img/menu-ch2@2x.png 2x" src="img/menu-ch2.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+			<div class="col-12 offset-0 col-md-5 offset-md-1">
+				<div class="row-2__img row-2__sixth emerge" data-effect="slide" data-duration="300"
+				     data-down="10%" data-continue="true">
+					<picture>
+						<source srcset="img/menu-de@2x.webp 2x" src="img/menu-de.webp" type="image/webp"/>
+						<img srcset="img/menu-de@2x.png 2x" src="img/menu-de.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row-3">
+	<div class="container">
+		<div class="row emerge" data-effect="slide" data-duration="300" data-down="10%" data-continue="true">
+			<div class="col-12 col-md-7 col-lg-7 col-xl-7 offset-md-1">
+				<div class="row-3__title">
+					<h5>Подсказка пути</h5>
+				</div>
+				<div class="row-3__desc">
+					<p>Основная фишка &mdash; подсвечивание ссылок, которые часто используются. Программа
+						запоминает действия и знает обо всех переходах пользователя, поэтому редизайн
+						хоть и ломает привычки, но компенсирует это явными подсказками, куда
+						идти.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 offset-0 col-md-8 offset-md-2">
+				<div class="row-3__img">
+					<picture class="row-3__img1 emerge" data-effect="slide" data-duration="300"
+					         data-down="10%" data-continue="true">
+						<source srcset="img/menu-regular-mob@2x.webp 2x" src="img/menu-regular-mob.webp"
+						        type="image/webp" media="(max-width: 767px)"/>
+						<source srcset="img/menu-regular-mob@2x.png 2x"
+						        src="img/menu-regular-mob.png" media="(max-width: 767px)"/>
+
+						<source srcset="img/menu-regular@2x.webp 2x" src="img/menu-regular.webp"
+						        type="image/webp" media="(min-width: 768px)"/>
+						<img srcset="img/menu-regular@2x.png 2x" src="img/menu-regular.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+					<img src="img/menu-regular-pick.svg" class="row-3__img2 emerge" data-effect="slide"
+					     data-duration="300" data-down="10%" data-continue="true"
+					     loading="lazy"
+					     alt="">
+					<img src="img/menu-regular-used.svg" class="row-3__img3 emerge" data-effect="slide"
+					     data-duration="300" data-down="10%" data-continue="true"
+					     loading="lazy"
+					     alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row-4">
+	<div class="container">
+		<div class="row emerge" data-effect="slide" data-duration="300" data-down="10%" data-continue="true">
+			<div class="col-12 col-md-7 col-lg-7 col-xl-7 offset-md-1">
+				<div class="row-4__title">
+					<h5>Суперфункция «Избранного»</h5>
+				</div>
+				<div class="row-4__desc">
+					<p>Оказалось, что некоторые пользователи 1С ведут задачи в «Избранном». <br>Я был
+						приятно удивлён таким использованием и предложил некоторые доработки, чтобы
+						повысить уровень личного микроменеджмента. Так появились группировка и теги.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-md-3">
+				<div class="row-4__img row-4__first emerge" data-effect="slide" data-duration="300"
+				     data-down="10%" data-continue="true">
+					<picture>
+						<source srcset="img/menu-favor1@2x.webp 2x" src="img/menu-favor1.webp"
+						        type="image/webp"/>
+						<img srcset="img/menu-favor1@2x.png 2x" src="img/menu-favor1.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+
+			<div class="col-12 offset-0 col-md-4 offset-md-1">
+				<div class="row-4__img row-4__second emerge" data-effect="slide" data-duration="300"
+				     data-down="10%" data-continue="true">
+					<picture>
+						<source srcset="img/menu-favor2@2x.webp 2x" src="img/menu-favor2.webp"
+						        type="image/webp"/>
+						<img srcset="img/menu-favor2@2x.png 2x" src="img/menu-favor2.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+			<div class="col-12 offset-0 col-md-3 offset-md-1">
+				<div class="row-4__img row-4__third emerge" data-effect="slide" data-duration="300"
+				     data-down="10%" data-continue="true">
+					<picture>
+						<source srcset="img/menu-favor3@2x.webp 2x" src="img/menu-favor3.webp"
+						        type="image/webp"/>
+						<img srcset="img/menu-favor3@2x.png 2x" src="img/menu-favor3.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+		</div>
+
+		<div class="row emerge" data-effect="slide" data-duration="300" data-down="10%" data-continue="true">
+			<div class="col-12 col-md-7 col-lg-7 col-xl-7 offset-md-1">
+				<div class="row-4__desc">
+					<p>В процессе выяснилось, что эмодзи достаточно, чтобы распознать группу, поэтому
+						рядом с названием задачи текст опускается. А в ситуациях, когда эмодзи
+						одинаковые, текст остаётся.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12 offset-0 col-md-10 offset-md-1">
+				<div class="row-4__em emerge" data-effect="slide" data-duration="300" data-down="10%"
+				     data-continue="true">
+					<picture>
+						<source srcset="img/menu-task@2x.webp 2x" src="img/menu-task.webp" type="image/webp"/>
+						<img srcset="img/menu-task@2x.png 2x" src="img/menu-task.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+					<p class="row-4__em-title">В&nbsp;заголовке</p>
+					<span class="row-4__em-task">Рядом с&nbsp;задачей</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<div class="row-4__footer emerge" data-effect="slide" data-duration="300" data-down="10%"
+				     data-continue="true">
+					<picture>
+						<source srcset="img/menu-tasks-mob@2x.webp 2x"
+						        src="img/menu-tasks-mob.webp" type="image/webp"
+						        media="(max-width: 767px)"/>
+						<source srcset="img/menu-tasks-mob@2x.png 2x"
+						        src="img/menu-tasks-mob.png" media="(max-width: 767px)"/>
+
+						<source srcset="img/menu-tasks@2x.webp 2x" src="img/menu-tasks.webp"
+						        type="image/webp" media="(min-width: 768px)"/>
+						<img srcset="img/menu-tasks@2x.png 2x" src="img/menu-tasks.png"
+						     loading="lazy"
+						     alt="">
+					</picture>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer emerge" data-effect="slide" data-duration="300" data-down="10%" data-continue="true">
+	<div class="container">
+		<div class="footer__container">
+			<div class="row">
+				<div class="col-12">
+					<div class="page-info">
+						<div class="page-info__made">
+							<img src="img/checked.svg" alt="">
+							<p>Сделано в 2020 году <br class="br-mob"> за 3 недели</p>
+						</div>
+						<div class="page-info__persons">
+
+							<div class="page-info__person">
+								<img srcset="img/ava@2x.png" src="img/ava.png" alt="">
+								<div class="page-info__data">
+									<div class="page-info__data-name">
+										<a href="/">Ярослав <br> Туголуковский</a>
+									</div>
+									<div class="page-info__data-proff">
+										<p>арт-директор<br> и&nbsp;дизайнер</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="page-info__person">
+								<img srcset="img/ava-anna@2x.png" src="img/ava-anna.png" alt="">
+								<div class="page-info__data">
+									<div class="page-info__data-name">
+										<a href="https://www.behance.net/Ryashentseva"
+										   target="_blank">Анна<br>Ряшенцева</a>
+									</div>
+									<div class="page-info__data-proff">
+										<p>дизайнер</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="page-info__feedback">
+							<div class="page-info__feedback-desc">
+								<p>См.&nbsp;дальше:</p>
+								<a class="page-info__feedback-link"
+								   href="app-1c.html">Мобильная&nbsp;касса</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div
+					class="col-sm-12 offset-sm-0 col-md-4 offset-md-1 col-lg-4 offset-lg-1 col-xl-4 offset-xl-1">
+					<div class="mobile-link emerge" data-effect="slide" data-duration="300" data-up="20px"
+					     data-left="25%" data-continue="true">
+						<div class="mobile-link__img">
+							<a class="img-link" href="app-1c.html">
+								<img src="img/1c-mob-second.svg" alt="">
+							</a>
+						</div>
+						<div class="mobile-link__link">
+							<a class="link-active" href="app-1c.html"><span>Далее:</span> Приложение <br>
+								1С:Мобильной кассы</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="footer__blocks">
+					<div class="footer__year">
+						<p>&#169; 2013 <span class="footer__dash">———</span>
+							<span class="footer__dash-mob">—————————————————————</span>
+							<span class="current-year">&nbsp;</span>
+						</p>
+					</div>
+
+					<div class="footer__links">
+						<a class="link-active"
+						   href="mailto:tugolukovskiy@gmail.com">tugolukovskiy@gmail.com</a>
+						<a class="link-active" href="https://t.me/tugolukovskiy" target="_blank">телеграм</a>
+						<a class="link-active link-margin" href="https://www.instagram.com/tugolukovskiy/"
+						   target="_blank">инста<span class="link-active__inst">грам</span></a>
+						<a class="link-active link-deactive link-lang br-mob-inline"
+						   href="javascript:void(0)">ру</a>
+						<img class="lang-arrow br-mob-inline" src="img/lang-arrow.svg" alt="">
+						<a class="link-active br-mob-inline" href="./en/menu-1c-en.html">en</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
