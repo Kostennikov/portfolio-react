@@ -598,6 +598,7 @@ a {
 		}
 		.link-active {
 			margin-right: 0.56em;
+			display: inline-block;
 			@media (min-width: 768px) {
 				margin-right: .8em;
 			}

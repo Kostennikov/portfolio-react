@@ -96,7 +96,7 @@ window.addEventListener('load', function () {
 
 $.fn.hyphenate = function () {
 	var RusA = '[абвгдеёжзийклмнопрстуфхцчшщъыьэюя]';
-	var RusV = '[аеёиоуыэю\я]';
+	var RusV = '[аеёиоуыэюя]';
 	var RusN = '[бвгджзклмнпрстфхцчшщ]';
 	var RusX = '[йъь]';
 	var Hyphen = '\xAD';
@@ -122,21 +122,22 @@ $.fn.hyphenate = function () {
 
 $('p').hyphenate();
 
-function redirect () {
-	const body = document.querySelector('body')
-	let redirect = localStorage.getItem('redirect');
+// function redirect () {
+// 	const body = document.querySelector('body')
+// 	let redirect = localStorage.getItem('redirect');
 
-	if (window.navigator.language !== 'ru' && !body.classList.contains('en') && !redirect) {
-		localStorage.setItem('redirect', 'true');
-		window.location.href = "en/index-en.html";
-	} else if (window.navigator.language !== 'ru' && body.classList.contains('en')) {
-		localStorage.setItem('redirect', 'true');
-	}
-}
+// 	if (window.navigator.language !== 'ru' && !body.classList.contains('en') && !redirect) {
+// 		localStorage.setItem('redirect', 'true');
+// 		window.location.href = "en/index-en.html";
+// 	} else if (window.navigator.language !== 'ru' && body.classList.contains('en')) {
+// 		localStorage.setItem('redirect', 'true');
+// 	}
+// }
 
-redirect ();
+// redirect ();
 
-// useEffect (() => {
-//     const currentYear = document.querySelector('.current-year');
-//     currentYear.append((new Date()).getFullYear());
-//   }) 
+// let date = new Date().getFullYear();
+// document.querySelector('.current-year').innerHTML = date;
+
+// const currentYear = document.querySelector('.current-year');
+// currentYear.append((new Date()).getFullYear());

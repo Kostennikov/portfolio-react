@@ -2,6 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createStore} from 'redux';
+import { CHANGE_LANG } from "./types";
+
+const initialLangState = {
+  value: 'ru'
+}
+
+const langReducer = (state = initialLangState, action) => {
+  switch (action.type) {
+      case CHANGE_LANG: 
+          return {...state, value: 'en'}
+      default: return state;
+  }
+}
+const store = createStore(langReducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

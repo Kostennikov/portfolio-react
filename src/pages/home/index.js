@@ -1,14 +1,24 @@
 import React, { useState, useEffect, Fragment } from 'react';
 // import { useHistory, useLocation } from "react-router";
-import { Link } from "react-router-dom";
 
+import { Link } from "react-router-dom";
+import { langReducer } from '../../rootReducer';
+// import createStore, { applyMiddleware } from 'redux';
+// import { langReducer } from '../../rootReducer';
+// import { changeLang } from '../../actions';
+// import logger from 'redux-logger';
 // import "../../js/emerge"
 // import { locale } from "../../config";
 // import VideoChat from "../video-chat-1c";
 import "../../static/scss/main-page.scss";
 import "../../static/scss/layout.scss";
+
+
+// const store = createStore(langReducer, 'ru', applyMiddleware(logger));
+
+
 function Home() {
-    
+   
     const [ru, setRu] = useState(true);
     console.log('ru', ru)
     // const location = useLocation();
@@ -18,10 +28,14 @@ function Home() {
         //! v.2.0 http://ilyabirman.net/projects/emerge/
         
         (function(){"use strict";const emerge="emerge";const emergeSpin="emerge-spin-element";const waitingForView=new WeakMap;const spinner=new WeakMap;const defaultDuration=500;const spinner_defaults=Object.freeze({spinSize:24,spinColor:"#404040",spinDirection:"clockwise",spinPeriod:1333,duration:defaultDuration});const cssImageProps=["backgroundImage","borderImage","borderCornerImage","listStyleImage","cursor"];const cssUrlRegex=/url\(\s*(['"]?)(.*?)\1\s*\)/g;function ready(callback){if(document.readyState!=="loading"){callback()}else{document.addEventListener("readystatechange",function(){if(document.readyState==="interactive"){callback()}},{passive:true})}}function spinnerCode(diameter,color,direction,period,fadeDuration){const element=document.createElement("div");Object.assign(element.style,{position:"absolute",display:"flex",justifyContent:"center",alignItems:"center",transition:`opacity ${fadeDuration}ms ease-out`});element.innerHTML="<svg viewBox='0 0 100 100' display='block'>"+"<defs><mask id='cut'>"+"<rect width='100' height='100' fill='white' stroke='none' />"+"<circle r='40' cx='50' cy='50' fill='black' stroke='none' />"+"<polygon points='50,50 100,25 150,50 100,75' fill='black'"+"stroke='none' transform-origin='center center' />"+"</mask></defs>"+"<circle r='50' cx='50' cy='50' mask='url(#cut)' stroke='none' />"+"</svg>";const svg=element.firstElementChild;svg.setAttribute("width",diameter);svg.setAttribute("hight",diameter);svg.lastElementChild.setAttribute("fill",color);element.firstElementChild.animate([{transform:"rotate(0turn)"},{transform:"rotate(1turn)"}],{duration:Number(period),iterations:Infinity,direction:direction==="counter-clockwise"?"reverse":"normal"});return element}function withinView(el){const bodyHeight=Math.min(document.body.clientHeight,document.documentElement.clientHeight);const position=el.getBoundingClientRect().top;const scrollTop=window.pageYOffset||document.documentElement.scrollTop;return position-scrollTop<bodyHeight}function getEmergeElements(){return Array.from(document.querySelectorAll(`.${emerge}`))}const imgLoaded=function(){const cache=Object.create(null);return function imgLoaded(url){if(cache[url]!==undefined){return cache[url]}cache[url]=new Promise(function(resolve){const img=document.createElement("img");img.src=url;if(img.complete){resolve()}else{img.addEventListener("load",()=>resolve());img.addEventListener("error",()=>resolve())}});return cache[url]}}();function eventDispatched(element,event){return new Promise(function(resolve){if(element.readyState>=4){resolve()}else{element.addEventListener(event,()=>resolve())}})}function get_element_to_wait_for(element,previous){return element.dataset.await!==undefined?document.getElementById(element.dataset.await):element.dataset.continue!==undefined?previous:undefined}function is_cyclic(element){let next=element;while(next.dataset.await!==undefined){next=document.getElementById(next.dataset.await);if(next===null){return false}if(next===element){return true}}return false}function fire(element){const spinElement=spinner.get(element);if(spinElement){spinElement.style.opacity=0;setTimeout(function(){if(element.parentNode.style.position==="relative"){element.parentNode.style.position=null}spinElement.remove()},defaultDuration)}element.style.transition=`opacity ${defaultDuration}ms ease-out`;element.style.opacity=1;const style2=element.dataset["style-2"];if(style2){element.setAttribute("style",element.getAttribute("style")+"; "+style2)}console.log("  FIRED!",element.id)}const viewWatcher=new IntersectionObserver(function(entries,watcher){entries.forEach(function(entry){if(entry.isIntersecting||withinView(entry.target)){if(waitingForView.has(entry.target)){waitingForView.get(entry.target)()}waitingForView.delete(entry.target);watcher.unobserve(entry.target);fire(entry.target)}})});function play(){const promises=new WeakMap;getEmergeElements().forEach(function(self,index,emerging){if(self.dataset.await&&document.getElementById(self.dataset.await)===null){throw`Emerge: Element with ID “${self.dataset.await}” not found.`}const previous=emerging[index-1];const box=self.getBoundingClientRect();const duration=self.dataset.duration||defaultDuration;let style1="";let style2="";const effect=self.dataset.effect||false;if(self.dataset.opaque){self.style.opacity=1}if(effect){let fxData={};const cssTransform="transform";const cssTransformOrigin="transform-origin";let up=self.dataset.up||0;const down=self.dataset.down||0;let left=self.dataset.left||0;const right=self.dataset.right||0;let angle=self.dataset.angle||"90";let scale=self.dataset.scale||-1;let origin=self.dataset.origin||"50% 50%";if(down){up="-"+down;if(up.substr(0,2)==="--"){up=up.substr(2)}}if(right){left="-"+right;if(left.substr(0,2)==="--"){left=left.substr(2)}}if(effect==="relax"){if(scale===-1){scale=.92}if(origin==="50% 50%"){origin="top"}fxData={one:"scaleY("+scale+")",two:"scaleY(1)",orn:origin,crv:"cubic-bezier(0, 0, 0.001, 1)"}}if(effect==="slide"){if(!up){up="20px"}fxData={one:"translate("+left+","+up+")",two:"translate(0,0)",crv:"cubic-bezier(0, 0.9, 0.1, 1)"}}if(effect==="zoom"){if(scale===-1){scale=.5}fxData={one:"scale("+scale+")",two:"scale(1)",orn:origin,crv:"cubic-bezier(0, 0.75, 0.25, 1)"}}if(effect==="screw"){if(scale===-1){scale=.5}if(!angle){angle=90}fxData={one:"scale("+scale+") rotate("+angle+"deg)",two:"scale(1) rotate(0)",orn:origin,crv:"cubic-bezier(0, 0.75, 0.25, 1)"}}if(fxData){style1+=`${cssTransform}: ${fxData.one};`+`${cssTransformOrigin}: ${fxData.orn};`;style2+=cssTransform+": "+fxData.two+"; "+"transition: "+"opacity "+duration+"ms ease-out, "+`${cssTransform} ${duration}ms ${fxData.crv};`}self.dataset["style-1"]=style1;self.dataset["style-2"]=style2}if(!style1){style1=self.dataset["style-1"]}if(style1){self.setAttribute("style",self.getAttribute("style")+"; "+style1)}const first=[];first.push(Promise.all([self].concat(Array.from(self.querySelectorAll("*"))).reduce(function(sources,element){if(element.nodeName.toLowerCase()==="img"){sources.push(imgLoaded(element.src))}else if(element.nodeName.toLowerCase()==="video"){sources.push(eventDispatched(element,element.dataset["emerge-event"]||"canplaythrough"))}const css=getComputedStyle(element);cssImageProps.forEach(function(key){const value=css[key];let match;if(value&&value.indexOf("url(")!==-1){while(true){match=cssUrlRegex.exec(value);if(match===null){break}sources.push(imgLoaded(match[2]))}}});return sources},[])));const element_to_wait_for=get_element_to_wait_for(self,previous);if(element_to_wait_for!==undefined&&!is_cyclic(self)){first.push(new Promise(function(resolve){queueMicrotask(function(){promises.get(element_to_wait_for).then(resolve)})}))}let last;const hold=Number(self.dataset.hold);if(self.dataset.expose!==undefined&&!withinView(self)){last=new Promise(function(resolve){viewWatcher.observe(self);waitingForView.set(self,resolve)})}else if(!Number.isNaN(hold)){last=function(){let callback;const promise=new Promise(function(resolve){callback=resolve});return function(){setTimeout(callback,hold);return promise}}()}else{last=Promise.resolve()}promises.set(self,Promise.all(first).then(function(){return typeof last==="function"?last():last}));promises.get(self).then(function(){fire(self)});if(self.dataset.spin){let spinElement;const customSpinner=document.getElementById(self.dataset.spinElement);if(customSpinner!==null){spinElement=customSpinner.cloneNode(true);spinElement.style.position="absolute";spinElement.style.display="block"}else{const spinnerOptions=Object.keys(spinner_defaults).reduce(function(options,key){options[key]=self.dataset[key]===undefined?spinner_defaults[key]:self.dataset[key];return options},{});spinElement=spinnerCode(...Object.values(spinnerOptions))}spinElement.style.width="100%";spinElement.style.height=Math.min(box.height,document.body.clientHeight-(self.getBoundingClientRect().top+window.pageYOffset))+"px";spinElement.classList.add(emergeSpin);if(getComputedStyle(self.parentNode).position==="static"){self.parentNode.style.position="relative"}self.parentNode.insertBefore(spinElement,self);spinner.set(self,spinElement)}})}function repeat(event){event.preventDefault();console.log("REPLAY");getEmergeElements().forEach(function(element){element.style.transition=null;element.style.opacity=null});document.querySelectorAll(`.${emergeSpin}`).forEach(function(element){element.remove()});play()}if(window.IntersectionObserver===undefined||document.documentElement.animate===undefined){return}if(window.navigator&&window.navigator.loadPurpose==="preview"){getEmergeElements().forEach(function(element){element.style.transition="none";element.style.opacity=1});return false}const style=document.createElement("style");style.innerHTML=`.${emerge} { opacity: 0; }`;document.head.append(style);ready(function(){play();document.querySelectorAll(".emerge-replay").forEach(function(element){element.addEventListener("click",repeat)})})})();
-      }, [ru]) 
-    
+        
+        let date = new Date().getFullYear();
+        document.querySelector('.current-year').innerHTML = '&nbsp;' + date;
+    }, [ru]) 
+   
+
     return (
-     <>
+     <div className='home'>
      {ru && (
         <Fragment>
             <header className="header">
@@ -39,12 +53,11 @@ function Home() {
                                         </div>
                                     </div>
                                 </div>
-
-                                <div className="header__links emerge" data-effect="fade" data-duration="200">
-                                    <a className="link-active"
-                                    href="mailto:tugolukovskiy@gmail.com">tugolukovskiy@gmail.com</a>
-                                    <Link className="link-active" to="https://t.me/tugolukovskiy" target="_blank">телеграм</Link>
-                                    <Link className="link-active" to="https://www.instagram.com/tugolukovskiy/"
+                                <div className="header__links">
+                                    <Link className="link-active emerge" data-effect="fade" data-duration="300"
+                                    to="mailto:tugolukovskiy@gmail.com">tugolukovskiy@gmail.com</Link>
+                                    <Link className="link-active emerge" data-effect="fade" data-duration="300" to="https://t.me/tugolukovskiy" target="_blank">телеграм</Link>
+                                    <Link className="link-active emerge" data-effect="fade" data-duration="300" to="https://www.instagram.com/tugolukovskiy/"
                                     target="_blank">инстаграм</Link>
 
                                     <div className={ru ? 'link-deactive link-active link-lang' : 'link-active link-lang'} 
@@ -56,8 +69,6 @@ function Home() {
                                         onClick={e => setRu(!ru)}>
                                             en
                                     </div>
-                                                                
-                                                            
                                 </div>
                                
                             </div>
@@ -65,8 +76,10 @@ function Home() {
                     </div>
                     <div className="row">
                         <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            <div className="header__desc">
-                                <p>Дизайню, <a className="link-active" href="poetry.html">пишу стихи</a> и&nbsp;музыку
+                            <div className="header__desc emerge" data-effect="fade" data-duration="300">
+                                <p>Дизайню,&nbsp;
+                                    <Link className="link-active" to="poetry.html">пишу стихи</Link>
+                                    &nbsp;и&nbsp;музыку
                                 </p>
                             </div>
                         </div>
@@ -81,7 +94,8 @@ function Home() {
                             <div className="redesign emerge" data-effect="slide" data-duration="300" data-bottom="20px"
                                 data-left="25%" data-continue="true">
                                 <div className="redesign__img">
-                                    <Link className="img-link" to="cleverence-redesign.html">
+                                    <Link className="img-link" to="cleverence-redesign" lang={true}
+                                        onClick={e => setRu(ru)}>
                                         <picture>
                                             <source srcSet="images/cleverence-redesign/cleverence-link-mob@2x.webp 2x"
                                                     src="images/cleverence-redesign/cleverence-link-mob.webp"
@@ -100,7 +114,7 @@ function Home() {
                                     </Link>
                                 </div>
                                 <div className="redesign__link">
-                                    <Link className="link-active" to="cleverence-redesign.html">Редизайн&nbsp;иконок<br/>
+                                    <Link className="link-active" to="cleverence-redesign" onClick={e => setRu(ru)} lang={true}>Редизайн&nbsp;иконок<br/>
                                         приложений<br className="br-mob"/>
                                         Cleverence</Link>
                                 </div>
@@ -130,7 +144,7 @@ function Home() {
                                     </Link>
                                 </div>
                                 <div className="prosto__link">
-                                    <a className="link-active" href="1c-prosto.html">Сайт&nbsp;«1С-Просто»</a>
+                                    <Link className="link-active" to="1c-prosto.html">Сайт&nbsp;«1С-Просто»</Link>
                                 </div>
                             </div>
                         </div>
@@ -145,17 +159,17 @@ function Home() {
                             <div className="video emerge" data-effect="slide" data-duration="300" data-down="20px"
                                 data-right="25%" data-continue="true">
                                 <div className="video__img">
-                                    <a className="img-link" href="video-chat-1c.html">
+                                    <Link className="img-link" to="video-chat-1c.html">
                                         <picture>
                                             <source srcSet="images/hero/main-hero@2x.webp 2x" src="images/hero/main-hero.webp"
                                                     type="image/webp"/>
                                             <img srcSet="images/hero/main-hero@2x.png 2x" src="images/hero/main-hero.png"
                                                 alt="" />
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="video__link">
-                                    <a className="link-active" href="video-chat-1c.html">Видеозвонки в&nbsp;1С</a>
+                                    <Link className="link-active" to="video-chat-1c.html">Видеозвонки в&nbsp;1С</Link>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +178,7 @@ function Home() {
                             <div className="travel emerge" data-effect="slide" data-duration="300" data-bottom="20px"
                                 data-left="25%" data-continue="true">
                                 <div className="travel__img">
-                                    <a className="img-link" href="take-travel.html">
+                                    <Link className="img-link" to="take-travel.html">
                                         <picture>
                                             <source srcSet="images/take-travel-mob@2x.webp 2x" src="images/take-travel-mob.webp"
                                                     type="image/webp" media="(max-width: 767px)"/>
@@ -173,10 +187,10 @@ function Home() {
                                             <source src="images/travel.svg" alt="" srcSet="" media="(min-width: 768px)"/>
                                             <img src="images/travel.svg" alt="" media="(max-width: 767px)"/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="travel__link">
-                                    <a className="link-active" href="take-travel.html">Take Travel</a>
+                                    <Link className="link-active" to="take-travel.html">Take Travel</Link>
                                 </div>
                             </div>
                         </div>
@@ -209,7 +223,7 @@ function Home() {
                             <div className="meso-admin emerge" data-effect="slide" data-duration="300" data-up="20px"
                                 data-left="25%" data-continue="true">
                                 <div className="meso-admin__img">
-                                    <a className="img-link" href="admin-meso.html">
+                                    <Link className="img-link" to="admin-meso.html">
                                         <picture>
                                             <source srcSet="images/gamepad@2x.webp 2x" src="images/gamepad.webp"
                                                     type="image/webp"/>
@@ -217,12 +231,12 @@ function Home() {
                                                 loading="lazy"
                                                 alt="" />
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="meso-admin__link">
-                                    <a className="link-active" href="admin-meso.html">Админка<br/> управления<br/>
+                                    <Link className="link-active" to="admin-meso.html">Админка<br/> управления<br/>
                                         магазинами<br/> для
-                                        компании<br/> MESO</a>
+                                        компании<br/> MESO</Link>
                                 </div>
                             </div>
                         </div>
@@ -363,18 +377,18 @@ function Home() {
                             <div className="menu emerge" data-effect="slide" data-duration="300" data-left="25%"
                                 data-continue="true">
                                 <div className="menu__img">
-                                    <a className="img-link" href="menu-1c.html">
+                                    <Link className="img-link" to="menu-1c.html">
                                         <picture>
                                             <source srcSet="images/favor@2x.webp 2x" src="images/favor.webp" type="image/webp"/>
                                             <img srcSet="images/favor@2x.png 2x" src="images/favor.png"
                                                 loading="lazy"
                                                 alt="" />
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="menu__link">
-                                    <a className="link-active" href="menu-1c.html">Большое обновление<br/> меню платформы
-                                        1С</a>
+                                    <Link className="link-active" to="menu-1c.html">Большое обновление<br/> меню платформы
+                                        1С</Link>
                                 </div>
                             </div>
                         </div>
@@ -389,18 +403,18 @@ function Home() {
                             <div className="meso-app emerge" data-effect="slide" data-duration="300" data-bottom="20px"
                                 data-right="25%" data-continue="true">
                                 <div className="meso-app__img">
-                                    <a className="img-link" href="app-meso.html">
+                                    <Link className="img-link" to="app-meso.html">
                                         <picture>
                                             <source srcSet="images/meso@2x.webp 2x" src="images/meso.webp" type="image/webp"/>
                                             <img srcSet="images/meso@2x.png 2x" src="images/meso.png"
                                                 loading="lazy"
                                                 alt="" />
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="meso-app__link">
-                                    <a className="link-active" href="app-meso.html">MESO&nbsp;&mdash; приложение<br/> для
-                                        заказа продуктов<br/> из магазинов у&nbsp;дома</a>
+                                    <Link className="link-active" to="app-meso.html">MESO&nbsp;&mdash; приложение<br/> для
+                                        заказа продуктов<br/> из магазинов у&nbsp;дома</Link>
                                 </div>
                             </div>
                         </div>
@@ -440,14 +454,14 @@ function Home() {
                             <div className="present emerge" data-effect="slide" data-duration="300" data-bottom="20px"
                                 data-left="25%" data-continue="true">
                                 <div className="present__img">
-                                    <a className="img-link" href="kos-day.html">
+                                    <Link className="img-link" to="kos-day.html">
                                         <img src="images/present.svg" alt="" />
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 <div className="present__link">
-                                    <a className="link-active" href="kos-day.html">Очень много<br className="br-mob" /> презентаций
-                                        <br/> на&nbsp;KOS-Day 2020</a>
+                                    <Link className="link-active" to="kos-day.html">Очень много<br className="br-mob" /> презентаций
+                                        <br/> на&nbsp;KOS-Day 2020</Link>
                                 </div>
                             </div>
                         </div>
@@ -506,7 +520,7 @@ function Home() {
                             <div className="bks-land emerge" data-effect="slide" data-duration="300" data-right="25%"
                                 data-continue="true">
                                 <div className="bks-land__img">
-                                    <a className="img-link" href="bks-land.html">
+                                    <Link className="img-link" to="bks-land.html">
                                         <picture>
                                             <source srcSet="images/bks-rect@2x.webp 2x" src="images/bks-rect.webp"
                                                     type="image/webp"/>
@@ -514,12 +528,12 @@ function Home() {
                                                 loading="lazy"
                                                 alt="" />
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 <div className="bsk-land__info">
                                     <div className="bks-land__link">
-                                        <a className="link-active" href="bks-land.html">Серия лендингов<br/> БКС Премьер</a>
+                                        <Link className="link-active" to="bks-land.html">Серия лендингов<br/> БКС Премьер</Link>
                                     </div>
 
                                     <div className="bks-land__time">
@@ -534,14 +548,14 @@ function Home() {
                             <div className="bks-mob emerge" data-effect="slide" data-duration="300" data-left="25%"
                                 data-continue="true">
                                 <div className="bks-mob__img">
-                                    <a className="img-link" href="bks-mob.html">
+                                    <Link className="img-link" to="bks-mob.html">
                                         <img src="images/bks-mob.svg" alt="" />
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 <div className="bks-mob__link">
-                                    <a className="link-active" href="bks-mob.html">Мобильная версия<br/> сервиса БКС Капитал
-                                        <br/> для партнёров</a>
+                                    <Link className="link-active" to="bks-mob.html">Мобильная версия<br/> сервиса БКС Капитал
+                                        <br/> для партнёров</Link>
                                 </div>
                             </div>
                         </div>
@@ -556,7 +570,7 @@ function Home() {
                             <div className="bks-invest emerge" data-effect="slide" data-duration="300" data-right="25%"
                                 data-continue="true">
                                 <div className="bks-invest__img">
-                                    <a className="img-link" href="bks-story.html">
+                                    <Link className="img-link" to="bks-story.html">
                                         <picture>
                                             <source srcSet="images/bks-invest@2x.webp 2x" src="images/bks-invest.webp"
                                                     type="image/webp"/>
@@ -564,11 +578,11 @@ function Home() {
                                                 loading="lazy"
                                                 alt="" />
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="bks-invest__link">
-                                    <a className="link-active" href="bks-story.html">Интерактивный<br/> рассказ о&nbsp;типах
-                                        <br/> инвестиций с&nbsp;БКС</a>
+                                    <Link className="link-active" to="bks-story.html">Интерактивный<br/> рассказ о&nbsp;типах
+                                        <br/> инвестиций с&nbsp;БКС</Link>
                                 </div>
                             </div>
                         </div>
@@ -590,7 +604,7 @@ function Home() {
                             <div className="app-auto emerge" data-effect="slide" data-duration="300" data-left="25%"
                                 data-continue="true">
                                 <div className="app-auto__img">
-                                    <a className="img-link" href="app-cleverence.html">
+                                    <Link className="img-link" to="app-cleverence.html">
                                         <picture>
                                             <source srcSet="images/automat@2x.webp 2x" src="images/automat.webp"
                                                     type="image/webp"/>
@@ -598,11 +612,11 @@ function Home() {
                                                 loading="lazy"
                                                 alt="" />
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="app-auto__link">
-                                    <a className="link-active" href="app-cleverence.html">Андроид-приложение для автоматизации<br/>
-                                        учёта товаров</a>
+                                    <Link className="link-active" to="app-cleverence.html">Андроид-приложение для автоматизации<br/>
+                                        учёта товаров</Link>
                                 </div>
                             </div>
                         </div>
@@ -617,7 +631,7 @@ function Home() {
                             <div className="frontol-app emerge" data-effect="slide" data-duration="300" data-left="25%"
                                 data-continue="true">
                                 <div className="frontol-app__img">
-                                    <a className="img-link" href="frontol-trade.html">
+                                    <Link className="img-link" to="frontol-trade.html">
                                         <picture>
                                             <source srcSet="images/frontol@2x.webp 2x" src="images/frontol.webp"
                                                     type="image/webp"/>
@@ -625,11 +639,11 @@ function Home() {
                                                 loading="lazy"
                                                 alt="" />
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="frontol-app__link">
-                                    <a className="link-active" href="frontol-trade.html">Приложение товароучётной<br/> системы
-                                        Frontol Trade</a>
+                                    <Link className="link-active" to="frontol-trade.html">Приложение товароучётной<br/> системы
+                                        Frontol Trade</Link>
                                 </div>
                             </div>
                         </div>
@@ -653,10 +667,10 @@ function Home() {
                                 </div>
                                 <div className="case__link">
                                     <p>Чехол для iPhone в виде опознавательного знака. 2020 год</p>
-                                    <p>Можно <a className="link-active"
+                                    <p>Можно <Link className="link-active"
                                                 target="_blank"
-                                                href="https://www.figma.com/file/TVEB5VOD4GQsqSGAIKqh0u/%D0%A7%D0%B5%D1%85%D0%BB%D1%8B-%D0%B4%D0%BB%D1%8F-%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%BE%D0%B2?node-id=0%3A1">
-                                        скачать в высоком разрешении</a></p>
+                                                to="https://www.figma.com/file/TVEB5VOD4GQsqSGAIKqh0u/%D0%A7%D0%B5%D1%85%D0%BB%D1%8B-%D0%B4%D0%BB%D1%8F-%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%BE%D0%B2?node-id=0%3A1">
+                                        скачать в высоком разрешении</Link></p>
 
                                 </div>
                             </div>
@@ -666,7 +680,7 @@ function Home() {
                             <div className="frontol-illust emerge" data-effect="slide" data-duration="300" data-left="25%"
                                 data-continue="true">
                                 <div className="frontol-illust__img">
-                                    <a className="img-link illust-links" href="frontol-illustrations.html">
+                                    <Link className="img-link illust-links" to="frontol-illustrations.html">
                                         <picture>
                                             <source srcSet="images/frontol-illust1@2x.webp 2x" src="images/frontol-illust1.webp"
                                                     type="image/webp"/>
@@ -674,8 +688,8 @@ function Home() {
                                                 loading="lazy"
                                                 alt=""/>
                                         </picture>
-                                    </a>
-                                    <a className="img-link illust-links" href="frontol-illustrations.html">
+                                    </Link>
+                                    <Link className="img-link illust-links" to="frontol-illustrations.html">
                                         <picture>
                                             <source srcSet="images/frontol-illust2@2x.webp 2x" src="images/frontol-illust2.webp"
                                                     type="image/webp"/>
@@ -683,12 +697,12 @@ function Home() {
                                                 loading="lazy"
                                                 alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 <div className="frontol-illust__link">
-                                    <a className="link-active" href="frontol-illustrations.html">Иллюстрации и&nbsp;листовки
-                                        <br/> для программ Frontol</a>
+                                    <Link className="link-active" to="frontol-illustrations.html">Иллюстрации и&nbsp;листовки
+                                        <br/> для программ Frontol</Link>
                                 </div>
                             </div>
                         </div>
@@ -703,7 +717,7 @@ function Home() {
                             <div className="bks-partners emerge" data-effect="slide" data-duration="300" data-right="25%"
                                 data-continue="true">
                                 <div className="bks-partners__img">
-                                    <a className="img-link" href="bks-partners.html">
+                                    <Link className="img-link" to="bks-partners.html">
                                         <picture>
                                             <source srcSet="images/bks-partners@2x.webp 2x" src="images/bks-pantners.webp"
                                                     type="image/webp"/>
@@ -711,12 +725,12 @@ function Home() {
                                                 loading="lazy"
                                                 alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 <div className="bks-partners__link">
-                                    <a className="link-active" href="bks-partners.html">Партнёрские сайты<br/> для компании
-                                        БКС</a>
+                                    <Link className="link-active" to="bks-partners.html">Партнёрские сайты<br/> для компании
+                                        БКС</Link>
                                 </div>
                             </div>
                         </div>
@@ -725,7 +739,7 @@ function Home() {
                             <div className="olivier emerge" data-effect="slide" data-duration="300" data-left="25%"
                                 data-continue="true">
                                 <div className="olivier__img">
-                                    <a className="img-link" href="olivier.html">
+                                    <Link className="img-link" to="olivier.html">
                                         <picture>
                                             <source srcSet="images/olivier@2x.webp 2x" src="images/olivier.webp"
                                                     type="image/webp"/>
@@ -733,11 +747,11 @@ function Home() {
                                                 loading="lazy"
                                                 alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="olivier__link">
-                                    <a className="link-active" href="olivier.html">Логотип портала<br/>
-                                        &laquo;Оливье&raquo;</a>
+                                    <Link className="link-active" to="olivier.html">Логотип портала<br/>
+                                        &laquo;Оливье&raquo;</Link>
                                 </div>
                             </div>
                         </div>
@@ -753,7 +767,7 @@ function Home() {
                                 <div className="bks-graph emerge" data-effect="slide" data-duration="300" data-right="25%"
                                     data-continue="true">
                                     <div className="bks-graph__img">
-                                        <a className="img-link" href="bks-invest.html">
+                                        <Link className="img-link" to="bks-invest.html">
                                             <img className="desk-link" src="images/bks-graph.svg" alt=""/>
                                             <picture className="mob-link">
                                                 <source srcSet="images/bks-graph-mob@2x.webp 2x" src="images/bks-graph-mob.webp"
@@ -762,25 +776,25 @@ function Home() {
                                                     loading="lazy"
                                                     alt=""/>
                                             </picture>
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="bks-graph__link">
-                                        <a className="link-active" href="bks-invest.html">Инвестиционные<br/> отчёты для
-                                            клиентов<br/> компании БКС </a>
+                                        <Link className="link-active" to="bks-invest.html">Инвестиционные<br/> отчёты для
+                                            клиентов<br/> компании БКС </Link>
                                     </div>
                                 </div>
 
                                 <div className="mob-cash emerge" data-effect="slide" data-duration="300" data-right="25%"
                                     data-continue="true">
                                     <div className="mob-cash__img">
-                                        <a className="img-link" href="app-1c.html">
+                                        <Link className="img-link" to="app-1c.html">
                                             <img src="images/1c-mob.svg" alt=""/>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="mob-cash__link">
-                                        <a className="link-active" href="app-1c.html">Приложение<br/> 1С:Мобильной<br/>
-                                            кассы</a>
+                                        <Link className="link-active" to="app-1c.html">Приложение<br/> 1С:Мобильной<br/>
+                                            кассы</Link>
                                     </div>
                                 </div>
                             </div>
@@ -790,7 +804,7 @@ function Home() {
                             <div className="song emerge" data-effect="slide" data-duration="300" data-down="25%"
                                 data-continue="true">
                                 <div className="song__img">
-                                    <a className="img-link" href="https://www.youtube.com/watch?v=Wsf11rHnO9c"
+                                    <Link className="img-link" to="https://www.youtube.com/watch?v=Wsf11rHnO9c"
                                     target="_blank">
                                         <picture>
                                             <source srcSet="images/song@2x.webp 2x" src="images/song.webp" type="image/webp"/>
@@ -798,11 +812,11 @@ function Home() {
                                                 loading="lazy"
                                                 alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="song__link">
-                                    <a className="link-active" href="https://www.youtube.com/watch?v=Wsf11rHnO9c"
-                                    target="_blank">Песня и&nbsp;клип<br/> &laquo;Ты&nbsp;говоришь&raquo;</a>
+                                    <Link className="link-active" to="https://www.youtube.com/watch?v=Wsf11rHnO9c"
+                                    target="_blank">Песня и&nbsp;клип<br/> &laquo;Ты&nbsp;говоришь&raquo;</Link>
                                 </div>
                             </div>
                         </div>
@@ -830,14 +844,14 @@ function Home() {
                             <div className="mob-cash mob-cash__second  emerge" data-effect="slide" data-duration="300"
                                 data-right="25%" data-continue="true">
                                 <div className="mob-cash__img">
-                                    <a className="img-link" href="app-1c.html">
+                                    <Link className="img-link" to="app-1c.html">
                                         <img src="images/1c-mob-second.svg" alt=""/>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="mob-cash__link">
-                                    <a className="link-active" href="app-1c.html">Приложение<br/> 1С:Мобильной<br
+                                    <Link className="link-active" to="app-1c.html">Приложение<br/> 1С:Мобильной<br
                                         className="br-mob"/>
-                                        кассы</a>
+                                        кассы</Link>
                                 </div>
                             </div>
                         </div>
@@ -852,7 +866,7 @@ function Home() {
                             <div className="marketing emerge" data-effect="slide" data-duration="300" data-right="25%"
                                 data-continue="true">
                                 <div className="marketing__img">
-                                    <a className="img-link" href="https://www.youtube.com/watch?v=W0B_QFWCRd4"
+                                    <Link className="img-link" to="https://www.youtube.com/watch?v=W0B_QFWCRd4"
                                     target="_blank">
                                         <picture>
                                             <source srcSet="images/marketing@2x.webp 2x" src="images/marketing.webp"
@@ -861,12 +875,12 @@ function Home() {
                                                 loading="lazy"
                                                 alt="" />
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="marketing__info">
                                     <div className="marketing__link">
-                                        <a className="link-active" href="https://www.youtube.com/watch?v=W0B_QFWCRd4"
-                                        target="_blank">Съёмка рекламы</a>
+                                        <Link className="link-active" to="https://www.youtube.com/watch?v=W0B_QFWCRd4"
+                                        target="_blank">Съёмка рекламы</Link>
                                     </div>
                                     <div className="marketing__desc">
                                         <span>Совместно с&nbsp;Антоном Медведевым</span>
@@ -922,15 +936,15 @@ function Home() {
                             <div class="col-12">
                                 <div class="page-info">
                                     <div class="col-12 col-md-6">
-                                        <div class="page-info__desc">
+                                        <div class="page-info__desc emerge" data-effect="fade" data-duration="300">
                                             <span>Проектирую сайты, приложения, и&nbsp;дизайню разные прикольные штуки.</span>
-                                            <span>Если хотите поработать со&nbsp;мной, пишите на&nbsp;<a
+                                            <span>Если хотите поработать со&nbsp;мной, пишите на&nbsp;<Link
                                                 class="link-active"
                                                 target="_blank"
-                                                href="mailto:tugolukovskiy@gmail.com">почту</a>
-                                            или в&nbsp;<a class="link-active"
+                                                to="mailto:tugolukovskiy@gmail.com">почту</Link>
+                                                &nbsp;или в&nbsp;<Link class="link-active"
                                                         target="_blank"
-                                                        href="https://t.me/tugolukovskiy">телеграм</a>.
+                                                        to="https://t.me/tugolukovskiy">телеграм</Link>.
                                         </span>
                                         </div>
                                     </div>
@@ -949,22 +963,27 @@ function Home() {
                                 </div>
 
 
-                                <div class="footer__dev">
-                                    <span>Сайт собран </span><a class="link-active" href="https://t.me/kostennikov"
-                                                                target="_blank">
-                                    Пашей Костенниковым</a>
+                                <div class="footer__dev emerge" data-effect="fade" data-duration="300">
+                                    <span>Сайт собран </span>
+                                    <Link class="link-active" to="https://t.me/kostennikov"
+                                        target="_blank">Пашей Костенниковым</Link>
                                 </div>
 
                                 <div class="footer__links">
-                                    <a class="link-active"
-                                    href="mailto:tugolukovskiy@gmail.com">tugolukovskiy@gmail.com</a>
-                                    <a class="link-active" href="https://t.me/tugolukovskiy" target="_blank">телеграм</a>
-                                    <a class="link-active link-margin" href="https://www.instagram.com/tugolukovskiy/"
-                                    target="_blank">инста<span class="link-active__inst">грам</span></a>
-                                    <a class="link-active link-deactive link-lang br-mob-inline"
-                                    href="javascript:void(0)">ру</a>
-                                    <img class="lang-arrow br-mob-inline" src="img/lang-arrow.svg" alt=""/>
-                                    <a class="link-active br-mob-inline" href="./en/index-en.html">en</a>
+                                    <Link class="link-active emerge" data-effect="fade" data-duration="300"
+                                    to="mailto:tugolukovskiy@gmail.com">tugolukovskiy@gmail.com</Link>
+                                    <Link class="link-active emerge" data-effect="fade" data-duration="300" to="https://t.me/tugolukovskiy" target="_blank">телеграм</Link>
+                                    <Link class="link-active link-margin emerge" data-effect="fade" data-duration="300" to="https://www.instagram.com/tugolukovskiy/"
+                                    target="_blank">инста<span class="link-active__inst">грам</span></Link>
+                                   <div className={ru ? 'link-deactive link-active link-lang' : 'link-active link-lang'} 
+                                        onClick={e => setRu(ru)}>
+                                            ру
+                                    </div>
+                                    <img className="lang-arrow" src="images/lang-arrow.svg" alt="" />                              
+                                    <div className="link-active" 
+                                        onClick={e => setRu(!ru)}>
+                                            en
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -992,11 +1011,11 @@ function Home() {
                                     </div>
                                 </div>
 
-                                <div className="header__links emerge" data-effect="fade" data-duration="200">
-                                    <a className="link-active"
-                                    href="mailto:tugolukovskiy@gmail.com">tugolukovskiy@gmail.com</a>
-                                    <Link className="link-active" to="https://t.me/tugolukovskiy" target="_blank">telegram</Link>
-                                    <Link className="link-active" to="https://www.instagram.com/tugolukovskiy/"
+                                <div className="header__links">
+                                    <Link className="link-active emerge" data-effect="fade" data-duration="300"
+                                    to="mailto:tugolukovskiy@gmail.com">tugolukovskiy@gmail.com</Link>
+                                    <Link className="link-active emerge" data-effect="fade" data-duration="300" to="https://t.me/tugolukovskiy" target="_blank">telegram</Link>
+                                    <Link className="link-active emerge" data-effect="fade" data-duration="300" to="https://www.instagram.com/tugolukovskiy/"
                                     target="_blank">instagram</Link>
 
                                     <div className={!ru ? 'link-active link-lang' : 'link-active link-deactive link-lang'} 
@@ -1015,8 +1034,8 @@ function Home() {
                     </div>
                     <div className="row">
                         <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            <div className="header__desc">
-                                <p>Designer, <a class="link-active" href="/en\poetry-en.html">poet</a> and musician
+                            <div className="header__desc emerge" data-effect="fade" data-duration="300">
+                                <p>Designer, <Link class="link-active" to="/en\poetry-en.html">poet</Link> and musician
 					            </p>
                             </div>
                         </div>
@@ -1030,7 +1049,7 @@ function Home() {
                         <div className="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                             <div className="redesign emerge" data-effect="slide" data-duration="300" data-bottom="20px" data-left="25%" data-continue="true">
                                 <div className="redesign__img">
-                                    <Link className="img-link" to="/en\cleverence-redesign-en.html">
+                                    <Link className="img-link" to="cleverence-redesign" lang='false'>
                                         <picture>
                                             <source srcset="images/cleverence-redesign/cleverence-link-mob@2x.webp 2x" src="images/cleverence-redesign/cleverence-link-mob.webp" type="image/webp" media="(max-width: 767px)"/>
                                             <source src="images/cleverence-redesign/cleverence-link-mob.png" srcset="images/cleverence-redesign/cleverence-link-mob@2x.png" alt="" media="(max-width: 767px)"/>
@@ -1041,8 +1060,8 @@ function Home() {
                                     </Link>
                                 </div>
                                 <div className="redesign__link">
-                                    <a className="link-active" href="/en\cleverence-redesign-en.html">Cleverence<br/>
-                                        logos redesign</a>
+                                    <Link className="link-active" to="cleverence-redesign" lang='false'>Cleverence<br/>
+                                        logos redesign</Link>
                                 </div>
                             </div>
                         </div>
@@ -1061,7 +1080,7 @@ function Home() {
                                     </Link>
                                 </div>
                                 <div className="prosto__link">
-                                    <a className="link-active" href="/en\1c-prosto-en.html">1C-Prosto</a>
+                                    <Link className="link-active" to="/en\1c-prosto-en.html">1C-Prosto</Link>
                                 </div>
                             </div>
                         </div>
@@ -1075,15 +1094,15 @@ function Home() {
                         <div className="col-sm-12 col-md-7 col-lg-7 col-xl-7">
                             <div className="video emerge" data-effect="slide" data-duration="300" data-down="20px" data-right="25%" data-continue="true">
                                 <div className="video__img">
-                                    <a className="img-link" href="/en\video-chat-1c-en.html">
+                                    <Link className="img-link" to="/en\video-chat-1c-en.html">
                                         <picture>
-                                            <source srcset="/main-hero@2x.webp 2x" src="/main-hero.78c72ede.webp" type="image/webp"/>
-                                            <img srcset="/main-hero@2x.png 2x" src="/main-hero.d4c9ebe9.png" alt=""/>
+                                            <source srcset="images/hero/main-hero@2x.webp 2x" src="images/hero/main-hero.webp" type="image/webp"/>
+                                            <img srcset="images/hero/main-hero@2x.png 2x" src="images/hero/main-hero.png" alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="video__link">
-                                    <a className="link-active" href="/en\video-chat-1c-en.html">1C videocalls</a>
+                                    <Link className="link-active" to="/en\video-chat-1c-en.html">1C videocalls</Link>
                                 </div>
                             </div>
                         </div>
@@ -1091,17 +1110,17 @@ function Home() {
                         <div className="col-sm-12 offset-sm-0 col-md-3 offset-md-1 col-lg-3 offset-lg-1 col-xl-3 offset-xl-1">
                             <div className="travel emerge" data-effect="slide" data-duration="300" data-bottom="20px" data-left="25%" data-continue="true">
                                 <div className="travel__img">
-                                    <a className="img-link" href="/en\take-travel-en.html">
+                                    <Link className="img-link" to="/en\take-travel-en.html">
                                         <picture>
-                                            <source srcset="/take-travel-mob@2x.03f5026a.webp 2x" src="/take-travel-mob.5aaa8781.webp" type="image/webp" media="(max-width: 767px)"/>
-                                            <source src="/take-travel-mob.09cf63a8.png" srcset="/take-travel-mob@2x.cf9fc831.png" alt="" media="(max-width: 767px)"/>
-                                            <source src="/travel.5fe787b6.svg" alt="" srcset="" media="(min-width: 768px)"/>
-                                            <img src="/travel.5fe787b6.svg" alt="" media="(max-width: 767px)"/>
+                                            <source srcset="images/take-travel-mob@2x.webp 2x" src="images/take-travel-mob.webp" type="image/webp" media="(max-width: 767px)"/>
+                                            <source src="images/take-travel-mob.png" srcset="images/take-travel-mob@2x.png" alt="" media="(max-width: 767px)"/>
+                                            <source src="images/travel.svg" alt="" srcset="" media="(min-width: 768px)"/>
+                                            <img src="images/travel.svg" alt="" media="(max-width: 767px)"/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="travel__link">
-                                    <a className="link-active" href="/en\take-travel-en.html">Take Travel</a>
+                                    <Link className="link-active" to="/en\take-travel-en.html">Take Travel</Link>
                                 </div>
                             </div>
                         </div>
@@ -1116,8 +1135,8 @@ function Home() {
                             <div className="respect emerge" data-effect="slide" data-duration="300" data-up="20px" data-right="25%" data-continue="true">
                                 <div className="respect__img">
                                     <picture>
-                                        <source srcset="/respect-cat@2x.236c7b43.webp 2x" src="/respect-cat.e6f94c94.webp" type="image/webp"/>
-                                        <img srcset="/respect-cat@2x.0a15bc0d.png 2x" src="/respect-cat.e5a95f72.png" loading="lazy" alt=""/>
+                                        <source srcset="images/respect-cat@2x.webp 2x" src="images/respect-cat.webp" type="image/webp"/>
+                                        <img srcset="images/respect-cat@2x.png 2x" src="images/respect-cat.png" loading="lazy" alt=""/>
                                     </picture>
                                 </div>
                                 <div className="respect__desc">
@@ -1130,16 +1149,16 @@ function Home() {
                         <div className="col-sm-12 offset-sm-0 col-md-4 offset-md-1 col-lg-4 offset-lg-1 col-xl-4 offset-xl-1">
                             <div className="meso-admin emerge" data-effect="slide" data-duration="300" data-up="20px" data-left="25%" data-continue="true">
                                 <div className="meso-admin__img">
-                                    <a className="img-link" href="/en\admin-meso-en.html">
+                                    <Link className="img-link" to="/en\admin-meso-en.html">
                                         <picture>
-                                            <source srcset="/gamepad@2x.f95b6dc4.webp 2x" src="/gamepad.76a800b4.webp" type="image/webp"/>
-                                            <img srcset="/gamepad@2x.7a3ca3d2.png 2x" src="/gamepad.33261d41.png" loading="lazy" alt=""/>
+                                            <source srcset="images/gamepad@2x.webp 2x" src="images/gamepad.webp" type="image/webp"/>
+                                            <img srcset="images/gamepad@2x.png 2x" src="images/gamepad.png" loading="lazy" alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="meso-admin__link">
-                                    <a className="link-active" href="/en\admin-meso-en.html">MESO<br/>
-                                        admin panel<br/> for grocery<br/> stores</a>
+                                    <Link className="link-active" to="/en\admin-meso-en.html">MESO<br/>
+                                        admin panel<br/> for grocery<br/> stores</Link>
                                 </div>
                             </div>
                         </div>
@@ -1220,15 +1239,15 @@ function Home() {
                         <div className="col-sm-12 offset-sm-0 col-md-7 offset-md-1 col-lg-7 offset-lg-1 col-xl-7 offset-xl-1">
                             <div className="menu emerge" data-effect="slide" data-duration="300" data-left="25%" data-continue="true">
                                 <div className="menu__img">
-                                    <a className="img-link" href="/en\menu-1c-en.html">
+                                    <Link className="img-link" to="/en\menu-1c-en.html">
                                         <picture>
-                                            <source srcset="/favor@2x.e63ad64d.webp 2x" src="/favor.0d8bfca3.webp" type="image/webp"/>
-                                            <img srcset="/favor@2x.217df43d.png 2x" src="/favor.381c4e56.png" loading="lazy" alt=""/>
+                                            <source srcset="images/favor@2x.webp 2x" src="images/favor.webp" type="image/webp"/>
+                                            <img srcset="images/favor@2x.png 2x" src="images/favor.png" loading="lazy" alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="menu__link">
-                                    <a className="link-active" href="/en\menu-1c-en.html">Major renewal <br/>of 1C menu</a>
+                                    <Link className="link-active" to="/en\menu-1c-en.html">Major renewal <br/>of 1C menu</Link>
                                 </div>
                             </div>
                         </div>
@@ -1242,16 +1261,16 @@ function Home() {
                         <div className="col-sm-12 col-md-4 col-lg-4 col-xl-4">
                             <div className="meso-app emerge" data-effect="slide" data-duration="300" data-bottom="20px" data-right="25%" data-continue="true">
                                 <div className="meso-app__img">
-                                    <a className="img-link" href="/en\app-meso-en.html">
+                                    <Link className="img-link" to="/en\app-meso-en.html">
                                         <picture>
-                                            <source srcset="/meso@2x.29e36ef3.webp 2x" src="/meso.a6284ea4.webp" type="image/webp"/>
-                                            <img srcset="/meso@2x.93712db6.png 2x" src="/meso.bf0cfc95.png" loading="lazy" alt=""/>
+                                            <source srcset="images/meso@2x.webp 2x" src="images/meso.webp" type="image/webp"/>
+                                            <img srcset="images/meso@2x.png 2x" src="images/meso.png" loading="lazy" alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="meso-app__link">
-                                    <a className="link-active" href="/en\app-meso-en.html">MESO — an app for<br/> ordering goods
-                                        from<br/> local grocery stores</a>
+                                    <Link className="link-active" to="/en\app-meso-en.html">MESO — an app for<br/> ordering goods
+                                        from<br/> local grocery stores</Link>
                                 </div>
                             </div>
                         </div>
@@ -1268,11 +1287,11 @@ function Home() {
                             <div className="photoshop emerge" data-effect="slide" data-duration="300" data-bottom="20px" data-right="25%" data-continue="true">
                                 <div className="photoshop__img">
                                     <span className="photoshop__img-eyes">
-                                        <img src="/eyes.0318ab69.svg" alt=""/>
+                                        <img src="images/eyes.svg" alt=""/>
                                     </span>
                                     <picture>
-                                        <source srcset="/photoshop@2x.3637e279.webp 2x" src="/photoshop.9f2d2630.webp" type="image/webp"/>
-                                        <img srcset="/photoshop@2x.54f6dbbf.png 2x" src="/photoshop.a5ebe030.png" loading="lazy" alt=""/>
+                                        <source srcset="images/photoshop@2x.webp 2x" src="images/photoshop.webp" type="image/webp"/>
+                                        <img srcset="images/photoshop@2x.png 2x" src="images/photoshop.png" loading="lazy" alt=""/>
                                     </picture>
                                 </div>
                                 <div className="photoshop__desc">
@@ -1285,14 +1304,14 @@ function Home() {
                         <div className="col-sm-12 offset-sm-0 col-md-7 offset-md-1 col-lg-7 offset-lg-1 col-xl-7 offset-xl-1">
                             <div className="present emerge" data-effect="slide" data-duration="300" data-bottom="20px" data-left="25%" data-continue="true">
                                 <div className="present__img">
-                                    <a className="img-link" href="/en\kos-day-en.html">
-                                        <img src="/present.963a601d.svg" alt=""/>
-                                    </a>
+                                    <Link className="img-link" to="/en\kos-day-en.html">
+                                        <img src="images/present.svg" alt=""/>
+                                    </Link>
                                 </div>
 
                                 <div className="present__link">
-                                    <a className="link-active" href="/en\kos-day-en.html">A lot of<br className="br-mob"/> presentations
-                                        <br/> for KOS-Day 2020</a>
+                                    <Link className="link-active" to="/en\kos-day-en.html">A lot of<br className="br-mob"/> presentations
+                                        <br/> for KOS-Day 2020</Link>
                                 </div>
                             </div>
                         </div>
@@ -1307,10 +1326,10 @@ function Home() {
                             <div className="neck emerge" data-effect="slide" data-duration="300" data-down="20%" data-continue="true">
                                 <div className="neck__img">
                                     <picture>
-                                        <source srcset="/neck@2x.ff608199.webp 2x" src="/neck.57abdf75.webp" type="image/webp" media="(min-width: 768px)"/>
-                                        <source srcset="/neck-mob@2x.aea5f341.webp 2x" src="/neck-mob.b9699c6e.webp" type="image/webp" media="(max-width: 767px)"/>
-                                        <source srcset="/neck-mob@2x.826ad47c.png 2x" src="/neck-mob.3ee92341.png" media="(max-width: 767px)"/>
-                                        <img srcset="/neck@2x.a44c88de.png 2x" src="/neck.849b9f6e.png" loading="lazy" alt=""/>
+                                        <source srcset="images/neck@2x.webp 2x" src="images/neck.webp" type="image/webp" media="(min-width: 768px)"/>
+                                        <source srcset="images/neck-mob@2x.webp 2x" src="images/neck-mob.webp" type="image/webp" media="(max-width: 767px)"/>
+                                        <source srcset="images/neck-mob@2x.png 2x" src="images/neck-mob.png" media="(max-width: 767px)"/>
+                                        <img srcset="images/neck@2x.png 2x" src="images/neck.png" loading="lazy" alt=""/>
                                     </picture>
                                 </div>
                                 <div className="neck__desc br-mob">
@@ -1342,17 +1361,17 @@ function Home() {
                         <div className="col-sm-12 col-md-7 col-lg-7 col-xl-7">
                             <div className="bks-land emerge" data-effect="slide" data-duration="300" data-right="25%" data-continue="true">
                                 <div className="bks-land__img">
-                                    <a className="img-link" href="/en\bks-land-en.html">
+                                    <Link className="img-link" to="/en\bks-land-en.html">
                                         <picture>
-                                            <source srcset="/bks-rect@2x.c36351b2.webp 2x" src="/bks-rect.7e0c591a.webp" type="image/webp"/>
-                                            <img srcset="/bks-rect@2x.4ca7d503.png 2x" src="/bks-rect.2e283fe8.png" loading="lazy" alt=""/>
+                                            <source srcset="images/bks-rect@2x.webp 2x" src="images/bks-rect.webp" type="image/webp"/>
+                                            <img srcset="images/bks-rect@2x.png 2x" src="images/bks-rect.png" loading="lazy" alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 <div className="bsk-land__info">
                                     <div className="bks-land__link">
-                                        <a className="link-active" href="/en\bks-land-en.html">BCS Premier<br/> landing pages</a>
+                                        <Link className="link-active" to="/en\bks-land-en.html">BCS Premier<br/> landing pages</Link>
                                     </div>
 
                                     <div className="bks-land__time">
@@ -1366,14 +1385,14 @@ function Home() {
                         <div className="col-sm-12 offset-sm-0 col-md-3 offset-md-1 col-lg-3 offset-lg-1 col-xl-3 offset-xl-1">
                             <div className="bks-mob emerge" data-effect="slide" data-duration="300" data-left="25%" data-continue="true">
                                 <div className="bks-mob__img">
-                                    <a className="img-link" href="/en\bks-mob-en.html">
-                                        <img src="/bks-mob.6247e2c5.svg" alt=""/>
-                                    </a>
+                                    <Link className="img-link" to="/en\bks-mob-en.html">
+                                        <img src="images/bks-mob.svg" alt=""/>
+                                    </Link>
                                 </div>
 
                                 <div className="bks-mob__link">
-                                    <a className="link-active" href="/en\bks-mob-en.html">Mobile service <br/>for partners <br/>of
-                                        BCS Capital</a>
+                                    <Link className="link-active" to="/en\bks-mob-en.html">Mobile service <br/>for partners <br/>of
+                                        BCS Capital</Link>
                                 </div>
                             </div>
                         </div>
@@ -1387,16 +1406,16 @@ function Home() {
                         <div className="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                             <div className="bks-invest emerge" data-effect="slide" data-duration="300" data-right="25%" data-continue="true">
                                 <div className="bks-invest__img">
-                                    <a className="img-link" href="/en\bks-story-en.html">
+                                    <Link className="img-link" to="/en\bks-story-en.html">
                                         <picture>
-                                            <source srcset="/bks-invest@2x.2dcea131.webp 2x" src="/bks-invest.79dab955.webp" type="image/webp"/>
-                                            <img srcset="/bks-invest@2x.1ee9cdfc.png 2x" src="/bks-invest.84f59ed1.png" loading="lazy" alt=""/>
+                                            <source srcset="images/bks-invest@2x.webp 2x" src="images/bks-invest.webp" type="image/webp"/>
+                                            <img srcset="images/bks-invest@2x.png 2x" src="images/bks-invest.png" loading="lazy" alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="bks-invest__link">
-                                    <a className="link-active" href="/en\bks-story-en.html">BCS narratives<br/>
-                                        about investment <br/>types</a>
+                                    <Link className="link-active" to="/en\bks-story-en.html">BCS narratives<br/>
+                                        about investment <br/>types</Link>
                                 </div>
                             </div>
                         </div>
@@ -1404,7 +1423,7 @@ function Home() {
                         <div className="col-sm-12 offset-sm-0 col-md-3 offset-md-1 col-lg-3 offset-lg-1 col-xl-3 offset-xl-1">
                             <div className="stamp emerge" data-effect="slide" data-duration="300" data-down="20%" data-continue="true">
                                 <div className="stamp__img">
-                                    <img src="/stamp.7f07fcb7.svg" alt=""/>
+                                    <img src="images/stamp.svg" alt=""/>
                                 </div>
 
                                 <div className="stamp__desc">
@@ -1416,16 +1435,16 @@ function Home() {
                         <div className="col-sm-12 offset-sm-0 col-md-3 offset-md-1 col-lg-3 offset-lg-1 col-xl-3 offset-xl-1">
                             <div className="app-auto emerge" data-effect="slide" data-duration="300" data-left="25%" data-continue="true">
                                 <div className="app-auto__img">
-                                    <a className="img-link" href="/en\app-cleverence-en.html">
+                                    <Link className="img-link" to="/en\app-cleverence-en.html">
                                         <picture>
-                                            <source srcset="/automat@2x.f6965248.webp 2x" src="/automat.c3d80841.webp" type="image/webp"/>
-                                            <img srcset="/automat@2x.8ed2f22c.png 2x" src="/automat.e6cbdfe8.png" loading="lazy" alt=""/>
+                                            <source srcset="images/automat@2x.webp 2x" src="images/automat.webp" type="image/webp"/>
+                                            <img srcset="images/automat@2x.png 2x" src="images/automat.png" loading="lazy" alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="app-auto__link">
-                                    <a className="link-active" href="/en\app-cleverence-en.html">Android app for<br/> goods
-                                        accounting<br/> automatization</a>
+                                    <Link className="link-active" to="/en\app-cleverence-en.html">Android app for<br/> goods
+                                        accounting<br/> automatization</Link>
                                 </div>
                             </div>
                         </div>
@@ -1439,15 +1458,15 @@ function Home() {
                         <div className="col-sm-12 offset-sm-0 col-md-8 offset-md-4 col-lg-8 offset-lg-4 col-xl-8 offset-xl-4">
                             <div className="frontol-app emerge" data-effect="slide" data-duration="300" data-left="25%" data-continue="true">
                                 <div className="frontol-app__img">
-                                    <a className="img-link" href="/en\frontol-trade-en.html">
+                                    <Link className="img-link" to="/en\frontol-trade-en.html">
                                         <picture>
-                                            <source srcset="/frontol@2x.0ca8bc3c.webp 2x" src="/frontol.1e43fee1.webp" type="image/webp"/>
-                                            <img srcset="/frontol@2x.593e6068.png 2x" src="/frontol.0273efc0.png" loading="lazy" alt=""/>
+                                            <source srcset="images/frontol@2x.webp 2x" src="images/frontol.webp" type="image/webp"/>
+                                            <img srcset="images/frontol@2x.png 2x" src="images/frontol.png" loading="lazy" alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="frontol-app__link">
-                                    <a className="link-active" href="/en\frontol-trade-en.html">Frontol Trade — a windows app <br className="br-mob"/>for inventory system</a>
+                                    <Link className="link-active" to="/en\frontol-trade-en.html">Frontol Trade — a windows app <br className="br-mob"/>for inventory system</Link>
                                 </div>
                             </div>
                         </div>
@@ -1462,14 +1481,14 @@ function Home() {
                             <div className="case emerge" data-effect="slide" data-duration="300" data-right="25%" data-continue="true">
                                 <div className="case__img">
                                     <picture>
-                                        <source srcset="/case@2x.07d63acd.webp 2x" src="/case.425a2994.webp" type="image/webp"/>
-                                        <img srcset="/case@2x.e9b193e8.png 2x" src="/case.390d3337.png" loading="lazy" alt=""/>
+                                        <source srcset="images/case@2x.webp 2x" src="images/case.webp" type="image/webp"/>
+                                        <img srcset="images/case@2x.png 2x" src="images/case.png" loading="lazy" alt=""/>
                                     </picture>
                                 </div>
                                 <div className="case__link">
                                     <p>iPhone case styled as<br/> a pipeline marker. 2020</p>
-                                    <p><a className="link-active" target="_blank" href="https://www.figma.com/file/TVEB5VOD4GQsqSGAIKqh0u/%D0%A7%D0%B5%D1%85%D0%BB%D1%8B-%D0%B4%D0%BB%D1%8F-%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%BE%D0%B2?node-id=0%3A1">
-                                        Download highres</a></p>
+                                    <p><Link className="link-active" target="_blank" to="https://www.figma.com/file/TVEB5VOD4GQsqSGAIKqh0u/%D0%A7%D0%B5%D1%85%D0%BB%D1%8B-%D0%B4%D0%BB%D1%8F-%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%BE%D0%B2?node-id=0%3A1">
+                                        Download highres</Link></p>
 
                                 </div>
                             </div>
@@ -1478,23 +1497,23 @@ function Home() {
                         <div className="col-sm-12 offset-sm-0 col-md-8 offset-md-1 col-lg-8 offset-lg-1 col-xl-8 offset-xl-1">
                             <div className="frontol-illust emerge" data-effect="slide" data-duration="300" data-left="25%" data-continue="true">
                                 <div className="frontol-illust__img">
-                                    <a className="img-link illust-links" href="/en\frontol-illustrations-en.html">
+                                    <Link className="img-link illust-links" to="/en\frontol-illustrations-en.html">
                                         <picture>
-                                            <source srcset="/frontol-illust1@2x.3d735338.webp 2x" src="/frontol-illust1.08b9d3e5.webp" type="image/webp"/>
-                                            <img srcset="/frontol-illust1@2x.e5708c4e.png 2x" src="/frontol-illust1.b4e89194.png" loading="lazy" alt=""/>
+                                            <source srcset="images/frontol-illust1@2x.webp 2x" src="images/frontol-illust1.webp" type="image/webp"/>
+                                            <img srcset="images/frontol-illust1@2x.png 2x" src="images/frontol-illust1.png" loading="lazy" alt=""/>
                                         </picture>
-                                    </a>
-                                    <a className="img-link illust-links" href="/en\frontol-illustrations-en.html">
+                                    </Link>
+                                    <Link className="img-link illust-links" to="/en\frontol-illustrations-en.html">
                                         <picture>
-                                            <source srcset="/frontol-illust2@2x.e096faf1.webp 2x" src="/frontol-illust2.d047f60e.webp" type="image/webp"/>
-                                            <img srcset="/frontol-illust2@2x.09e32423.png 2x" src="/frontol-illust2.f881a57a.png" loading="lazy" alt=""/>
+                                            <source srcset="images/frontol-illust2@2x.webp 2x" src="images/frontol-illust2.webp" type="image/webp"/>
+                                            <img srcset="images/frontol-illust2@2x.png 2x" src="images/frontol-illust2.png" loading="lazy" alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 <div className="frontol-illust__link">
-                                    <a className="link-active" href="/en\frontol-illustrations-en.html">Illustrations and
-                                        fliers<br/> for Frontol programs</a>
+                                    <Link className="link-active" to="/en\frontol-illustrations-en.html">Illustrations and
+                                        fliers<br/> for Frontol programs</Link>
                                 </div>
                             </div>
                         </div>
@@ -1508,17 +1527,17 @@ function Home() {
                         <div className="col-sm-12 col-md-7 col-lg-7 col-xl-7">
                             <div className="bks-partners emerge" data-effect="slide" data-duration="300" data-right="25%" data-continue="true">
                                 <div className="bks-partners__img">
-                                    <a className="img-link" href="/en\bks-partners-en.html">
+                                    <Link className="img-link" to="/en\bks-partners-en.html">
                                         <picture>
-                                            <source srcset="/bks-partners@2x.621a06bd.webp 2x" src="/bks-pantners.d6b13060.webp" type="image/webp"/>
-                                            <img srcset="/bks-partners@2x.acec4cbc.png 2x" src="/bks-pantners.01636790.png" loading="lazy" alt=""/>
+                                            <source srcset="images/bks-partners@2x.webp 2x" src="images/bks-pantners.webp" type="image/webp"/>
+                                            <img srcset="images/bks-partners@2x.png 2x" src="images/bks-pantners.png" loading="lazy" alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 <div className="bks-partners__link">
-                                    <a className="link-active" href="/en\bks-partners-en.html">Partner websites for<br/> BCS
-                                        Financial Group</a>
+                                    <Link className="link-active" to="/en\bks-partners-en.html">Partner websites for<br/> BCS
+                                        Financial Group</Link>
                                 </div>
                             </div>
                         </div>
@@ -1526,15 +1545,15 @@ function Home() {
                         <div className="col-sm-12 offset-sm-0 col-md-4 offset-md-1 col-lg-4 offset-lg-1 col-xl-4 offset-xl-1">
                             <div className="olivier emerge" data-effect="slide" data-duration="300" data-left="25%" data-continue="true">
                                 <div className="olivier__img">
-                                    <a className="img-link" href="/en\olivier-en.html">
+                                    <Link className="img-link" to="/en\olivier-en.html">
                                         <picture>
-                                            <source srcset="/olivier@2x.8e45fd51.webp 2x" src="/olivier.5df55b91.webp" type="image/webp"/>
-                                            <img srcset="/olivier@2x.8887ed80.png 2x" src="/olivier.1d4e8f15.png" loading="lazy" alt=""/>
+                                            <source srcset="images/olivier@2x.webp 2x" src="images/olivier.webp" type="image/webp"/>
+                                            <img srcset="images/olivier@2x.png 2x" src="images/olivier.png" loading="lazy" alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="olivier__link">
-                                    <a className="link-active" href="/en\olivier-en.html">"Olivier"<br/> portal logo</a>
+                                    <Link className="link-active" to="/en\olivier-en.html">"Olivier"<br/> portal logo</Link>
                                 </div>
                             </div>
                         </div>
@@ -1549,29 +1568,29 @@ function Home() {
                             <div className="bks-items">
                                 <div className="bks-graph emerge" data-effect="slide" data-duration="300" data-right="25%" data-continue="true">
                                     <div className="bks-graph__img">
-                                        <a className="img-link" href="/en\bks-invest-en.html">
+                                        <Link className="img-link" to="/en\bks-invest-en.html">
                                             <img className="desk-link" src="/bks-graph.b0319758.svg" alt=""/>
                                             <picture className="mob-link">
-                                                <source srcset="/bks-graph-mob@2x.77124235.webp 2x" src="/bks-graph-mob.bd8eddb4.webp" type="image/webp"/>
-                                                <img srcset="/bks-graph-mob@2x.3ba2f592.png 2x" src="/bks-graph-mob.0224668c.png" loading="lazy" alt=""/>
+                                                <source srcset="images/bks-graph-mob@2x.webp 2x" src="images/bks-graph-mob.webp" type="image/webp"/>
+                                                <img srcset="images/bks-graph-mob@2x.png 2x" src="images/bks-graph-mob.png" loading="lazy" alt=""/>
                                             </picture>
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="bks-graph__link">
-                                        <a className="link-active" href="/en\bks-invest-en.html">Investment <br/>
-                                            reports for clients <br/>of BCS company</a>
+                                        <Link className="link-active" to="/en\bks-invest-en.html">Investment <br/>
+                                            reports for clients <br/>of BCS company</Link>
                                     </div>
                                 </div>
 
                                 <div className="mob-cash emerge" data-effect="slide" data-duration="300" data-right="25%" data-continue="true">
                                     <div className="mob-cash__img">
-                                        <a className="img-link" href="/en\app-1c-en.html">
-                                            <img src="/1c-mob.3d76e99d.svg" alt=""/>
-                                        </a>
+                                        <Link className="img-link" to="/en\app-1c-en.html">
+                                            <img src="images/1c-mob.svg" alt=""/>
+                                        </Link>
                                     </div>
                                     <div className="mob-cash__link">
-                                        <a className="link-active" href="/en\app-1c-en.html">1C cashiers <br/>mobile app</a>
+                                        <Link className="link-active" to="/en\app-1c-en.html">1C cashiers <br/>mobile app</Link>
                                     </div>
                                 </div>
                             </div>
@@ -1580,15 +1599,15 @@ function Home() {
                         <div className="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                             <div className="song emerge" data-effect="slide" data-duration="300" data-down="25%" data-continue="true">
                                 <div className="song__img">
-                                    <a className="img-link" href="https://www.youtube.com/watch?v=Wsf11rHnO9c" target="_blank">
+                                    <Link className="img-link" to="https://www.youtube.com/watch?v=Wsf11rHnO9c" target="_blank">
                                         <picture>
-                                            <source srcset="/song@2x.d0f66432.webp 2x" src="/song.e3558d66.webp" type="image/webp"/>
-                                            <img srcset="/song@2x.315e8fbf.png 2x" src="/song.50ead1d4.png" loading="lazy" alt=""/>
+                                            <source srcset="images/song@2x.webp 2x" src="images/song.webp" type="image/webp"/>
+                                            <img srcset="images/song@2x.png 2x" src="images/song.png" loading="lazy" alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="song__link">
-                                    <a className="link-active" href="https://www.youtube.com/watch?v=Wsf11rHnO9c" target="_blank">Music video<br/> &laquo;Ты&nbsp;говоришь&raquo;</a>
+                                    <Link className="link-active" to="https://www.youtube.com/watch?v=Wsf11rHnO9c" target="_blank">Music video<br/> &laquo;Ты&nbsp;говоришь&raquo;</Link>
                                 </div>
                             </div>
                         </div>
@@ -1597,8 +1616,8 @@ function Home() {
                             <div className="butcher emerge" data-effect="slide" data-duration="300" data-left="25%" data-continue="true">
                                 <div className="butcher__img">
                                     <picture>
-                                        <source srcset="/butcher@2x.aa710183.webp 2x" src="/butcher.9c6e310f.webp" type="image/webp"/>
-                                        <img srcset="/butcher@2x.9cf381d4.png 2x" src="/butcher.8e6e29b6.png" loading="lazy" alt=""/>
+                                        <source srcset="images/butcher@2x.webp 2x" src="imagesbutcher.webp" type="image/webp"/>
+                                        <img srcset="images/butcher@2x.png 2x" src="images/butcher.png" loading="lazy" alt=""/>
                                     </picture>
                                 </div>
                                 <div className="butcher__link">
@@ -1611,12 +1630,12 @@ function Home() {
                         <div className="col-sm-12 col-md-4 col-lg-4 col-xl-4">
                             <div className="mob-cash mob-cash__second  emerge" data-effect="slide" data-duration="300" data-right="25%" data-continue="true">
                                 <div className="mob-cash__img">
-                                    <a className="img-link" href="/en\app-1c-en.html">
-                                        <img src="/1c-mob-second.036429a7.svg" alt=""/>
-                                    </a>
+                                    <Link className="img-link" to="/en\app-1c-en.html">
+                                        <img src="images/1c-mob-second.svg" alt=""/>
+                                    </Link>
                                 </div>
                                 <div className="mob-cash__link">
-                                    <a className="link-active" href="/en\app-1c-en.html">1C cashiers<br/> mobile app</a>
+                                    <Link className="link-active" to="/en\app-1c-en.html">1C cashiers<br/> mobile app</Link>
                                 </div>
                             </div>
                         </div>
@@ -1630,16 +1649,16 @@ function Home() {
                         <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <div className="marketing emerge" data-effect="slide" data-duration="300" data-right="25%" data-continue="true">
                                 <div className="marketing__img">
-                                    <a className="img-link" href="https://www.youtube.com/watch?v=W0B_QFWCRd4" target="_blank">
+                                    <Link className="img-link" to="https://www.youtube.com/watch?v=W0B_QFWCRd4" target="_blank">
                                         <picture>
-                                            <source srcset="/marketing@2x.90c3ab68.webp 2x" src="/marketing.d4938fed.webp" type="image/webp"/>
-                                            <img srcset="/marketing@2x.b1265f35.png 2x" src="/marketing.df8064fa.png" loading="lazy" alt=""/>
+                                            <source srcset="images/marketing@2x.webp 2x" src="images/marketing.webp" type="image/webp"/>
+                                            <img srcset="images/marketing@2x.png 2x" src="images/marketing.png" loading="lazy" alt=""/>
                                         </picture>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="marketing__info">
                                     <div className="marketing__link">
-                                        <a className="link-active" href="https://www.youtube.com/watch?v=W0B_QFWCRd4" target="_blank">Ad shooting</a>
+                                        <Link className="link-active" to="https://www.youtube.com/watch?v=W0B_QFWCRd4" target="_blank">Ad shooting</Link>
                                     </div>
                                     <div className="marketing__desc">
                                         <span>with Anton Medvedev</span>
@@ -1650,7 +1669,7 @@ function Home() {
                         <div className="col-sm-12 offset-sm-0 col-md-2 offset-md-1 col-lg-2 offset-lg-1 col-xl-2 offset-xl-1">
                             <div className="sun-cake emerge" data-effect="slide" data-duration="300" data-left="25%" data-continue="true">
                                 <div className="sun-cake__img">
-                                    <img src="/sun-cake.00ef85d1.svg" alt=""/>
+                                    <img src="images/sun-cake.svg" alt=""/>
                                 </div>
                                 <div className="sun-cake__link">
                                     <p>Sun Cake<br className="br-mob"/> naming<br className="br-mob"/>
@@ -1669,8 +1688,8 @@ function Home() {
                             <div className="icons emerge" data-effect="slide" data-duration="300" data-down="25%" data-continue="true">
                                 <div className="icons__img">
                                     <picture>
-                                        <source srcset="/icons@2x.98482e46.webp 2x" src="/icons.beecccf5.webp" type="image/webp"/>
-                                        <img srcset="/icons@2x.31a26fe6.png 2x" src="/icons.a23c42dc.png" loading="lazy" alt=""/>
+                                        <source srcset="images/icons@2x.webp 2x" src="images/icons.webp" type="image/webp"/>
+                                        <img srcset="images/icons@2x.png 2x" src="images/icons.png" loading="lazy" alt=""/>
                                     </picture>
                                 </div>
 
@@ -1684,9 +1703,71 @@ function Home() {
                 </div>
             </section>
 
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer__container">
+                        <div class="row">
+                            <div class="col-12">
+
+                            <div class="page-info">
+                                    <div class="col-12 col-md-6">
+                                        <div class="page-info__desc emerge" data-effect="fade" data-duration="300">
+                                            <span>I design apps, websites and <br class="br-mob"/>some funny things.</span>
+                                            <span>If you want to work with me, <br class="br-mob"/>reach me via&nbsp;
+                                                <Link
+                                                class="link-active"
+                                                target="_blank"
+                                                to="mailto:tugolukovskiy@gmail.com">mail</Link>
+                                                &nbsp;or&nbsp;<Link class="link-active"
+                                                        target="_blank"
+                                                        to="https://t.me/tugolukovskiy">telegram</Link>.
+                                        </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="footer__blocks">
+                                <div class="footer__year">
+                                    <p>&#169; 2013 <span class="footer__dash">———</span>
+                                        <span class="footer__dash-mob">—————————————————————</span>
+                                        <span class="current-year">&nbsp;</span>
+                                    </p>
+                                </div>
+
+                                <div class="footer__dev emerge" data-effect="fade" data-duration="300">
+                                    <span>Code by </span>
+                                    <Link class="link-active" to="https://t.me/kostennikov"
+                                        target="_blank">Pasha Kostennikov</Link>
+                                </div>
+
+                                <div class="footer__links">
+                                    <Link class="link-active emerge" data-effect="fade" data-duration="300"
+                                    to="mailto:tugolukovskiy@gmail.com">tugolukovskiy@gmail.com</Link>
+                                    <Link class="link-active emerge" data-effect="fade" data-duration="300" to="https://t.me/tugolukovskiy" target="_blank">telegram</Link>
+                                    <Link class="link-active link-margin emerge" data-effect="fade" data-duration="300" to="https://www.instagram.com/tugolukovskiy/"
+                                    target="_blank">insta<span class="link-active__inst">gram</span></Link>
+                                    <div className={!ru ? 'link-active link-lang' : 'link-active link-deactive link-lang'} 
+                                        onClick={e => setRu(!ru)}>
+                                            ру
+                                    </div>                             
+                                    <img className={!ru ? 'lang-arrow lang-arrow-reverse' : 'lang-arrow'} src="images/lang-arrow.svg" alt="" />
+                                    <div className={!ru ? 'link-deactive link-active' : 'link-active'} 
+                                        onClick={e => setRu(ru)}>
+                                            en
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </Fragment>
         )}
-     </>
+     </div>
     );
   }
 
